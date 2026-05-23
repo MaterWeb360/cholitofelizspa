@@ -1,4 +1,47 @@
 <?php get_header(); ?>
+
+<?php 
+
+// Banner
+$con_hero_title_1     = carbon_get_post_meta(get_the_ID(), 'con_hero_title_1');
+$con_hero_title_2     = carbon_get_post_meta(get_the_ID(), 'con_hero_title_2');
+$con_hero_description = carbon_get_post_meta(get_the_ID(), 'con_hero_description');
+$con_hero_main_image  = carbon_get_post_meta(get_the_ID(), 'con_hero_main_image');
+
+// Contacto
+$con_contact_tag                  = carbon_get_post_meta(get_the_ID(), 'con_contact_tag');
+$con_contact_title                = carbon_get_post_meta(get_the_ID(), 'con_contact_title');
+$con_contact_description          = carbon_get_post_meta(get_the_ID(), 'con_contact_description');
+$con_contact_methods              = carbon_get_post_meta(get_the_ID(), 'con_contact_methods');
+$con_contact_social_icon          = carbon_get_post_meta(get_the_ID(), 'con_contact_social_icon');
+$con_contact_social_title         = carbon_get_post_meta(get_the_ID(), 'con_contact_social_title');
+$con_contact_social_description   = carbon_get_post_meta(get_the_ID(), 'con_contact_social_description');
+$con_contact_social_links         = carbon_get_post_meta(get_the_ID(), 'con_contact_social_links');
+$con_contact_features             = carbon_get_post_meta(get_the_ID(), 'con_contact_features');
+
+// Nuestras Tiendas
+$con_stores_title_1      = carbon_get_post_meta(get_the_ID(), 'con_stores_title_1');
+$con_stores_title_2      = carbon_get_post_meta(get_the_ID(), 'con_stores_title_2');
+$con_stores_description  = carbon_get_post_meta(get_the_ID(), 'con_stores_description');
+$con_stores_locations    = carbon_get_post_meta(get_the_ID(), 'con_stores_locations');
+
+// Productos de Interés
+$con_featured_products_title_1    = carbon_get_post_meta(get_the_ID(), 'con_featured_products_title_1');
+$con_featured_products_title_2    = carbon_get_post_meta(get_the_ID(), 'con_featured_products_title_2');
+$con_featured_products_description = carbon_get_post_meta(get_the_ID(), 'con_featured_products_description');
+$con_featured_products            = carbon_get_post_meta(get_the_ID(), 'con_featured_products');
+
+// Productos favoritos
+$hm_banner_tag              = carbon_get_post_meta(get_the_ID(), 'hm_banner_tag');
+$hm_banner_title_1          = carbon_get_post_meta(get_the_ID(), 'hm_banner_title_1');
+$hm_banner_title_2          = carbon_get_post_meta(get_the_ID(), 'hm_banner_title_2');
+$hm_banner_description      = carbon_get_post_meta(get_the_ID(), 'hm_banner_description');
+$hm_banner_models_image     = carbon_get_post_meta(get_the_ID(), 'hm_banner_models_image');
+$hm_banner_background_image = carbon_get_post_meta(get_the_ID(), 'hm_banner_background_image');
+$hm_banner_products         = carbon_get_post_meta(get_the_ID(), 'hm_banner_products');
+
+?>
+
     <section class="seccion">
       <div class="padding-seccion is-banner-internas">
         <div class="container-seccion">

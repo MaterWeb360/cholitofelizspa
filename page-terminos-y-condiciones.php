@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+<?php // Contenido Legal
+$gl_legal_content = carbon_get_post_meta(get_the_ID(), 'gl_legal_content'); ?>
     <section class="seccion">
       <div class="padding-seccion is-banner-internas">
         <div class="container-seccion">

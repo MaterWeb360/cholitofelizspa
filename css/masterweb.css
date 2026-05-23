@@ -1,0 +1,514 @@
+/* ==========================================================
+   PRODUCTO SINGLE
+========================================================== */
+
+.producto-single {
+    padding: 6rem 0;
+}
+
+.producto-single_wrp {
+    display: grid;
+    grid-template-columns: 1fr 32rem;
+    gap: 5rem;
+    align-items: start;
+}
+
+/* ==========================================================
+   GALERÍA
+========================================================== */
+
+.producto-single_galeria {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: 1.5rem;
+}
+
+.producto-single_thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.producto-single_thumb {
+    aspect-ratio: 1;
+    border: 1px solid #e5ddd2;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff;
+    transition: .3s;
+}
+
+.producto-single_thumb:hover,
+.producto-single_thumb.is-active {
+    border-color: #c89b4f;
+}
+
+.producto-single_thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.producto-single_imagen {
+    position: relative;
+    background: #f8f4ed;
+    border-radius: 2rem;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.producto-single_imagen img {
+    width: 100%;
+    display: block;
+}
+
+
+
+/* ==========================================================
+   INFORMACIÓN
+========================================================== */
+
+.producto-single_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-single_categoria {
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #c89b4f;
+    margin-bottom: .75rem;
+}
+
+.producto-single_titulo {
+    font-size: 3rem;
+    line-height: 1.05;
+    color: #3f3127;
+    margin-bottom: 1rem;
+}
+
+.producto-single_rating {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: 2rem;
+}
+
+.producto-single_estrellas {
+    color: #d9a441;
+    font-size: 1rem;
+}
+
+.producto-single_reviews {
+    color: #777;
+    font-size: .95rem;
+}
+
+.producto-single_precio {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #3f3127;
+    margin-bottom: 1.5rem;
+}
+
+.producto-single_descripcion {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================
+   BLOQUES
+========================================================== */
+
+.producto-single_bloque {
+    margin-bottom: 2rem;
+}
+
+.producto-single_label {
+    font-weight: 600;
+    color: #3f3127;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================
+   COLORES
+========================================================== */
+
+.producto-single_colores {
+    display: flex;
+    gap: .75rem;
+}
+
+.producto-single_color {
+    width: 2.7rem;
+    height: 2.7rem;
+
+    border-radius: 50%;
+    border: 2px solid #d9d9d9;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.producto-single_color:hover,
+.producto-single_color.is-active {
+    border-color: #c89b4f;
+    transform: scale(1.05);
+}
+
+/* ==========================================================
+   VARIACIONES
+========================================================== */
+
+.producto-single_variaciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+
+.producto-single_var {
+    min-width: 4rem;
+    height: 3rem;
+
+    border: 1px solid #d8d8d8;
+    background: white;
+
+    border-radius: .75rem;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.producto-single_var:hover,
+.producto-single_var.is-active {
+    background: #c89b4f;
+    color: white;
+    border-color: #c89b4f;
+}
+
+/* ==========================================================
+   COMPRA
+========================================================== */
+
+.producto-single_compra {
+    display: flex;
+    gap: 1rem;
+}
+
+.producto-single_cantidad {
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #d8d8d8;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.producto-single_cantidad button {
+    width: 3rem;
+    height: 3.5rem;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.producto-single_cantidad input {
+    width: 4rem;
+
+    border: none;
+    text-align: center;
+    outline: none;
+
+    font-size: 1rem;
+}
+
+.producto-single_btn {
+    flex: 1;
+
+    height: 3.5rem;
+
+    border: none;
+    border-radius: .8rem;
+
+    background: #c89b4f;
+    color: white;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.producto-single_btn:hover {
+    background: #6c8466;
+}
+
+.producto-single_btn-secundario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+
+    height: 3.5rem;
+
+    border-radius: .8rem;
+    border: 1px solid #b99b7a;
+
+    color: #6b5645;
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.producto-single_btn-secundario:hover {
+    background: #f8f4ed;
+}
+
+/* ==========================================================
+   BENEFICIOS
+========================================================== */
+
+.producto-single_beneficios {
+    margin-top: 2.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.producto-single_beneficio {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+
+    padding: 1rem;
+
+    background: #f8f4ed;
+    border-radius: 1rem;
+}
+
+.producto-single_beneficio-icono {
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: 50%;
+    background: #c89b4f;
+}
+
+.producto-single_beneficio span {
+    font-size: .95rem;
+    color: #3f3127;
+}
+
+/* ==========================================================
+   DETALLES
+========================================================== */
+
+.producto-detalles {
+    padding-bottom: 6rem;
+}
+
+.producto-detalles_wrp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+
+.producto-detalles_titulo {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+    color: #3f3127;
+}
+
+.producto-detalles_texto {
+    color: #666;
+    line-height: 1.9;
+}
+
+.producto-detalles_texto ul {
+    margin-top: 1.5rem;
+    padding-left: 1.25rem;
+}
+
+.producto-detalles_texto li {
+    margin-bottom: .75rem;
+}
+
+.producto-detalles_tabla {
+    border-top: 1px solid #ece5da;
+}
+
+.producto-detalles_fila {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+
+    gap: 2rem;
+
+    padding: 1rem 0;
+
+    border-bottom: 1px solid #ece5da;
+}
+
+.producto-detalles_fila span:first-child {
+    font-weight: 600;
+    color: #3f3127;
+}
+
+.producto-detalles_fila span:last-child {
+    color: #666;
+}
+@media screen and (max-width: 991px) {
+
+    /* ==========================================================
+       PRODUCTO
+    ========================================================== */
+
+    .producto-single {
+        padding: 3rem 0;
+    }
+
+    .producto-single_wrp {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* ==========================================================
+       GALERÍA
+    ========================================================== */
+
+    .producto-single_galeria {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    .producto-single_thumbs {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: .75rem;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .producto-single_thumbs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .producto-single_thumb {
+        flex-shrink: 0;
+
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .producto-single_imagen {
+        padding: 1rem;
+        border-radius: 1.5rem;
+    }
+
+
+    /* ==========================================================
+       INFO
+    ========================================================== */
+
+    .producto-single_titulo {
+        font-size: 2rem;
+    }
+
+    .producto-single_precio {
+        font-size: 2rem;
+    }
+
+    .producto-single_descripcion {
+        font-size: .95rem;
+    }
+
+    /* ==========================================================
+       COLORES
+    ========================================================== */
+
+    .producto-single_colores {
+        flex-wrap: wrap;
+    }
+
+    /* ==========================================================
+       TALLAS
+    ========================================================== */
+
+    .producto-single_variaciones {
+        flex-wrap: wrap;
+    }
+
+    .producto-single_var {
+        min-width: 3.5rem;
+    }
+
+    /* ==========================================================
+       COMPRA
+    ========================================================== */
+
+    .producto-single_compra {
+        flex-direction: column;
+    }
+
+    .producto-single_cantidad {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .producto-single_btn {
+        width: 100%;
+    }
+
+    .producto-single_btn-secundario {
+        width: 100%;
+    }
+
+    /* ==========================================================
+       BENEFICIOS
+    ========================================================== */
+
+    .producto-single_beneficios {
+        grid-template-columns: 1fr;
+    }
+
+    .producto-single_beneficio {
+        padding: .9rem 1rem;
+    }
+
+    /* ==========================================================
+       DETALLES
+    ========================================================== */
+
+    .producto-detalles {
+        padding-bottom: 4rem;
+    }
+
+    .producto-detalles_wrp {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .producto-detalles_titulo {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .producto-detalles_fila {
+        grid-template-columns: 1fr;
+        gap: .35rem;
+    }
+
+}

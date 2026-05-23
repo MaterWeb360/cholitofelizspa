@@ -22,6 +22,7 @@
   <link href="<?php echo get_template_directory_uri(); ?>/css/normalize.css" rel="stylesheet" type="text/css">
   <link href="<?php echo get_template_directory_uri(); ?>/css/webflow.css" rel="stylesheet" type="text/css">
   <link href="<?php echo get_template_directory_uri(); ?>/css/cholito-feliz-espa.webflow.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo get_template_directory_uri(); ?>/css/masterweb.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>

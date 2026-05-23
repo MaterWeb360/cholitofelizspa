@@ -1,4 +1,36 @@
 <?php get_header(); ?>
+<?php 
+
+// Banner
+$ab_hero_title_1     = carbon_get_post_meta(get_the_ID(), 'ab_hero_title_1');
+$ab_hero_title_2     = carbon_get_post_meta(get_the_ID(), 'ab_hero_title_2');
+$ab_hero_description = carbon_get_post_meta(get_the_ID(), 'ab_hero_description');
+$ab_hero_main_image  = carbon_get_post_meta(get_the_ID(), 'ab_hero_main_image');
+
+// Nuestra Historia
+$ab_history_section_title_1   = carbon_get_post_meta(get_the_ID(), 'ab_history_section_title_1');
+$ab_history_section_title_2   = carbon_get_post_meta(get_the_ID(), 'ab_history_section_title_2');
+$ab_history_section_description = carbon_get_post_meta(get_the_ID(), 'ab_history_section_description');
+$ab_history_title_1           = carbon_get_post_meta(get_the_ID(), 'ab_history_title_1');
+$ab_history_title_2           = carbon_get_post_meta(get_the_ID(), 'ab_history_title_2');
+$ab_history_description       = carbon_get_post_meta(get_the_ID(), 'ab_history_description');
+$ab_history_featured_text     = carbon_get_post_meta(get_the_ID(), 'ab_history_featured_text');
+$ab_history_main_image        = carbon_get_post_meta(get_the_ID(), 'ab_history_main_image');
+$ab_history_cards             = carbon_get_post_meta(get_the_ID(), 'ab_history_cards');
+
+// Nuestras Tiendas
+$ab_stores_title_1     = carbon_get_post_meta(get_the_ID(), 'ab_stores_title_1');
+$ab_stores_title_2     = carbon_get_post_meta(get_the_ID(), 'ab_stores_title_2');
+$ab_stores_description = carbon_get_post_meta(get_the_ID(), 'ab_stores_description');
+$ab_stores_locations   = carbon_get_post_meta(get_the_ID(), 'ab_stores_locations');
+
+// Productos de Interés
+$ab_featured_products_title_1    = carbon_get_post_meta(get_the_ID(), 'ab_featured_products_title_1');
+$ab_featured_products_title_2    = carbon_get_post_meta(get_the_ID(), 'ab_featured_products_title_2');
+$ab_featured_products_description = carbon_get_post_meta(get_the_ID(), 'ab_featured_products_description');
+$ab_featured_products            = carbon_get_post_meta(get_the_ID(), 'ab_featured_products');
+
+?>
     <section class="seccion">
       <div class="padding-seccion is-banner-internas">
         <div class="container-seccion">

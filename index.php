@@ -1,96 +1,146 @@
 <?php get_header(); ?>
-  <section class="seccion">
-  <div data-delay="4000" data-animation="slide" class="slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false"
-       data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+<?php
+// Banner
+$hm_hero_slider = carbon_get_post_meta(get_the_ID(), 'hm_hero_slider');
 
-    <div class="seccion-mask w-slider-mask">
+// Categorías
+$hm_categories_title_1     = carbon_get_post_meta(get_the_ID(), 'hm_categories_title_1');
+$hm_categories_title_2     = carbon_get_post_meta(get_the_ID(), 'hm_categories_title_2');
+$hm_categories_description = carbon_get_post_meta(get_the_ID(), 'hm_categories_description');
 
-      <div class="seccion-slide w-slide">
+// Productos favoritos
+$hm_banner_tag              = carbon_get_post_meta(get_the_ID(), 'hm_banner_tag');
+$hm_banner_title_1          = carbon_get_post_meta(get_the_ID(), 'hm_banner_title_1');
+$hm_banner_title_2          = carbon_get_post_meta(get_the_ID(), 'hm_banner_title_2');
+$hm_banner_description      = carbon_get_post_meta(get_the_ID(), 'hm_banner_description');
+$hm_banner_models_image     = carbon_get_post_meta(get_the_ID(), 'hm_banner_models_image');
+$hm_banner_background_image = carbon_get_post_meta(get_the_ID(), 'hm_banner_background_image');
+$hm_banner_products         = carbon_get_post_meta(get_the_ID(), 'hm_banner_products');
 
-        <div class="seccion-cont-slider">
+// Franja de descuentos y promociones
+$hm_discount_divider_image = carbon_get_post_meta(get_the_ID(), 'hm_discount_divider_image');
+$hm_discount_items         = carbon_get_post_meta(get_the_ID(), 'hm_discount_items');
 
-          <div class="padding-seccion hero">
+// Productos en descuento
+$hm_products_banner_image         = carbon_get_post_meta(get_the_ID(), 'hm_products_banner_image');
+$hm_products_banner_title         = carbon_get_post_meta(get_the_ID(), 'hm_products_banner_title');
+$hm_products_banner_description   = carbon_get_post_meta(get_the_ID(), 'hm_products_banner_description');
+$hm_products_banner_button_text   = carbon_get_post_meta(get_the_ID(), 'hm_products_banner_button_text');
+$hm_products_banner_button_link   = carbon_get_post_meta(get_the_ID(), 'hm_products_banner_button_link');
+$hm_products_featured             = carbon_get_post_meta(get_the_ID(), 'hm_products_featured');
 
-            <div class="container-seccion">
+// Transparencia
+$hm_transparency_title_1              = carbon_get_post_meta(get_the_ID(), 'hm_transparency_title_1');
+$hm_transparency_title_2              = carbon_get_post_meta(get_the_ID(), 'hm_transparency_title_2');
+$hm_transparency_cards                = carbon_get_post_meta(get_the_ID(), 'hm_transparency_cards');
+$hm_transparency_highlight_icon       = carbon_get_post_meta(get_the_ID(), 'hm_transparency_highlight_icon');
+$hm_transparency_highlight_text_1     = carbon_get_post_meta(get_the_ID(), 'hm_transparency_highlight_text_1');
+$hm_transparency_highlight_text_2     = carbon_get_post_meta(get_the_ID(), 'hm_transparency_highlight_text_2');
+$hm_transparency_benefits             = carbon_get_post_meta(get_the_ID(), 'hm_transparency_benefits');
+?>
+<section class="seccion">
+    <div data-delay="4000" data-animation="slide" class="slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false"
+        data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
 
-              <div class="wrp-seccion">
+        <div class="seccion-mask w-slider-mask">
 
-                <div class="wrp-sectiion_info">
+            <?php foreach ($hm_hero_slider as $item) :
 
-                  <h1 class="title-hero">
-                    <span class="mayuscula">Todo lo que tu</span><br>
-                    <span class="title-doreado">compañero necesita,</span><br>
-                    <span class="resaltado-title">
-                      <strong>para una vida feliz</strong>
-                    </span>
-                  </h1>
+                $hm_hero_background_image = $item['hm_hero_background_image'];
+                $hm_hero_character_image  = $item['hm_hero_character_image'];
+                $hm_hero_title_1          = $item['hm_hero_title_1'];
+                $hm_hero_title_2          = $item['hm_hero_title_2'];
+                $hm_hero_title_3          = $item['hm_hero_title_3'];
+                $hm_hero_description      = $item['hm_hero_description'];
+                $hm_hero_button_text      = $item['hm_hero_button_text'];
+                $hm_hero_button_link      = $item['hm_hero_button_link'];
 
-                  <p class="text-20">
-                    Compra por nuestra tienda online y ten
-                    <br>un 10% de descuento!
-                  </p>
+            ?>
 
-                  <a href="#"
-                     class="button is-relative w-inline-block">
+                <div class="seccion-slide w-slide">
 
-                    <div>
-                      Descubre lo mejor para ellos
+                    <div class="seccion-cont-slider">
+
+                        <div class="padding-seccion hero">
+
+                            <div class="container-seccion">
+
+                                <div class="wrp-seccion">
+
+                                    <div class="wrp-sectiion_info">
+
+                                        <h1 class="title-hero">
+                                            <span class="mayuscula"><?php echo $hm_hero_title_1; ?></span><br>
+                                            <span class="title-doreado"><?php echo $hm_hero_title_2; ?></span><br>
+                                            <span class="resaltado-title">
+                                                <strong><?php echo $hm_hero_title_3; ?></strong>
+                                            </span>
+                                        </h1>
+
+                                        <p class="text-20">
+                                            <?php echo nl2br($hm_hero_description); ?>
+                                        </p>
+
+                                        <a href="<?php echo $hm_hero_button_link; ?>"
+                                            class="button is-relative w-inline-block">
+
+                                            <div>
+                                                <?php echo $hm_hero_button_text; ?>
+                                            </div>
+
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/Rectangle-42.png"
+                                                loading="lazy"
+                                                alt="">
+
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/admiracion-btn-hero.svg"
+                                                loading="lazy"
+                                                alt=""
+                                                class="button-img-flotante">
+
+                                        </a>
+
+                                    </div>
+
+                                    <img src="<?php echo $hm_hero_character_image; ?>"
+                                        loading="lazy"
+                                        alt=""
+                                        class="slider-img">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="secccion-bg">
+
+                            <img src="<?php echo $hm_hero_background_image; ?>"
+                                loading="lazy"
+                                alt=""
+                                class="seccion-slider_fondo">
+
+                        </div>
+
                     </div>
-
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/Rectangle-42.png"
-                         loading="lazy"
-                         alt="">
-
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/admiracion-btn-hero.svg"
-                         loading="lazy"
-                         alt=""
-                         class="button-img-flotante">
-
-                  </a>
 
                 </div>
 
-                <img src="<?php echo get_template_directory_uri(); ?>/images/Group-83-1.png" loading="lazy" id="w-node-_1526bfed-e309-248c-f193-5f0e0684563a-be679ea6" sizes="100vw" alt="" class="slider-img">
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="secccion-bg">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/images/Banner-principal-2.png"
-                 loading="lazy"
-                 sizes="100vw"
-                 srcset="
-                 <?php echo get_template_directory_uri(); ?>/images/Banner-principal-2-p-500.png 500w,
-                 <?php echo get_template_directory_uri(); ?>/images/Banner-principal-2-p-800.png 800w,
-                 <?php echo get_template_directory_uri(); ?>/images/Banner-principal-2.png 1920w
-                 "
-                 alt=""
-                 class="seccion-slider_fondo">
-
-          </div>
+            <?php endforeach; ?>
 
         </div>
 
-      </div>
+        <div class="seccion-arrow w-slider-arrow-left">
+            <div class="w-icon-slider-left"></div>
+        </div>
+
+        <div class="seccion-arrow w-slider-arrow-right">
+            <div class="w-icon-slider-right"></div>
+        </div>
+
+        <div class="seccion-nav w-slider-nav w-slider-nav-invert w-round"></div>
 
     </div>
-
-    <div class="seccion-arrow w-slider-arrow-left">
-      <div class="w-icon-slider-left"></div>
-    </div>
-
-    <div class="seccion-arrow w-slider-arrow-right">
-      <div class="w-icon-slider-right"></div>
-    </div>
-
-    <div class="seccion-nav w-slider-nav w-slider-nav-invert w-round"></div>
-
-  </div>
-  </section>
+</section>
   <section class="seccion is-overflow-hidden">
     <div class="padding-seccion">
       <div class="container-seccion">

@@ -1,4 +1,34 @@
 <?php get_header(); ?>
+<?php
+
+// Banner
+$ti_hero_title_1     = carbon_get_post_meta(get_the_ID(), 'ti_hero_title_1');
+$ti_hero_title_2     = carbon_get_post_meta(get_the_ID(), 'ti_hero_title_2');
+$ti_hero_description = carbon_get_post_meta(get_the_ID(), 'ti_hero_description');
+$ti_hero_main_image  = carbon_get_post_meta(get_the_ID(), 'ti_hero_main_image');
+
+// Productos de Interés
+$ti_featured_products_title_1     = carbon_get_post_meta(get_the_ID(), 'ti_featured_products_title_1');
+$ti_featured_products_title_2     = carbon_get_post_meta(get_the_ID(), 'ti_featured_products_title_2');
+$ti_featured_products_description = carbon_get_post_meta(get_the_ID(), 'ti_featured_products_description');
+$ti_featured_products             = carbon_get_post_meta(get_the_ID(), 'ti_featured_products');
+
+// Nuestras Tiendas
+$ti_stores_title_1     = carbon_get_post_meta(get_the_ID(), 'ti_stores_title_1');
+$ti_stores_title_2     = carbon_get_post_meta(get_the_ID(), 'ti_stores_title_2');
+$ti_stores_description = carbon_get_post_meta(get_the_ID(), 'ti_stores_description');
+$ti_stores_locations   = carbon_get_post_meta(get_the_ID(), 'ti_stores_locations');
+
+// Productos favoritos
+$ti_banner_tag              = carbon_get_post_meta(get_the_ID(), 'ti_banner_tag');
+$ti_banner_title_1          = carbon_get_post_meta(get_the_ID(), 'ti_banner_title_1');
+$ti_banner_title_2          = carbon_get_post_meta(get_the_ID(), 'ti_banner_title_2');
+$ti_banner_description      = carbon_get_post_meta(get_the_ID(), 'ti_banner_description');
+$ti_banner_models_image     = carbon_get_post_meta(get_the_ID(), 'ti_banner_models_image');
+$ti_banner_background_image = carbon_get_post_meta(get_the_ID(), 'ti_banner_background_image');
+$ti_banner_products         = carbon_get_post_meta(get_the_ID(), 'ti_banner_products');
+
+?>
 
     <section class="seccion">
       <div class="padding-seccion is-banner-internas">

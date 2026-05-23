@@ -1,5 +1,19 @@
 <?php get_header(); ?>
 
+<?php
+
+// Banner
+$li_hero_title_1     = carbon_get_post_meta(get_the_ID(), 'li_hero_title_1');
+$li_hero_title_2     = carbon_get_post_meta(get_the_ID(), 'li_hero_title_2');
+$li_hero_description = carbon_get_post_meta(get_the_ID(), 'li_hero_description');
+$li_hero_main_image  = carbon_get_post_meta(get_the_ID(), 'li_hero_main_image');
+
+// Descripciones del libro
+$li_desp_products_1 = carbon_get_post_meta(get_the_ID(), 'li_desp_products_1');
+$li_desp_products_2 = carbon_get_post_meta(get_the_ID(), 'li_desp_products_2');
+
+?>
+
     <section class="seccion">
       <div class="padding-seccion is-banner-internas">
         <div class="container-seccion">
