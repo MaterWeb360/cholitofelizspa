@@ -173,18 +173,17 @@ function cf_home_fields() {
 			Field::make('text', 'hm_transparency_title_2', 'Título de la sección - Línea 2')
 			    ->set_width(50),
 
-			Field::make('complex', 'hm_transparency_cards', 'Tarjetas de transparencia')
+			Field::make('complex', 'hmdos_transparency_cards', 'Tarjetas de transparencia')
 			    ->set_layout('tabbed-horizontal')
 			    ->add_fields([
 
 			        Field::make('image', 'icon', 'Ícono')
-			            ->set_width(30)
-			            ->set_value_type('url'),
+			            ->set_width(30),
 
 			        Field::make('text', 'title', 'Título')
 			            ->set_width(70),
 
-			        Field::make('textarea', 'description', 'Descripción')
+			        Field::make('rich_text', 'description', 'Descripción')
 			            ->set_width(100),
 
 			    ]),
