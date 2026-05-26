@@ -21,7 +21,7 @@ function cf_libro_fields() {
         Field::make('text', 'li_hero_title_2', 'Título principal - Línea 2')
             ->set_width(50),
 
-        Field::make('textarea', 'li_hero_description', 'Descripción')
+        Field::make('rich_text', 'li_hero_description', 'Descripción')
             ->set_width(50),
 
         Field::make('image', 'li_hero_main_image', 'Imagen principal')
@@ -34,11 +34,11 @@ function cf_libro_fields() {
 
 	->add_tab('Descripciónes del libro', [
 
-	    Field::make('text', 'li_desp_products_1', 'Descripción arriba del formulario')
+	    Field::make('rich_text', 'li_desp_products_1', 'Descripción arriba del formulario')
 	        ->set_width(50)
 	        ->set_help_text('Primera línea del título principal de la sección.'),
 
-	    Field::make('text', 'li_desp_products_2', 'Mensaje abajo del formulario')
+	    Field::make('rich_text', 'li_desp_products_2', 'Mensaje abajo del formulario')
 	        ->set_width(50)
 	        ->set_help_text('Segunda línea del título principal de la sección.'),
 

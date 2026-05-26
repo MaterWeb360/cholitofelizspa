@@ -19,10 +19,10 @@ $li_desp_products_2 = carbon_get_post_meta(get_the_ID(), 'li_desp_products_2');
         <div class="container-seccion">
           <div class="wrp-seccion _2col">
             <div class="herop_info">
-              <h1 class="heading-h2">Libro <span class="text-color-orange">de reclamaciones</span></h1>
-              <p class="hero-prf">El Libro de Reclamaciones de Cholito Feliz Spa &amp; PetShop se encuentra a disposición de todos nuestros clientes y usuarios, conforme a la normativa vigente en el Perú. </p>
+              <h1 class="heading-h2"><?= $li_hero_title_1 ; ?><span class="text-color-orange"><?= $li_hero_title_1; ?></span></h1>
+              <p class="hero-prf"><?= $li_hero_description; ?></p>
             </div>
-            <div class="hero_info-imagen"><img src="<?php echo get_template_directory_uri(); ?>/images/16149b45ed4da247edea5bd5df5efdae-removebg-preview-1-1.png" loading="lazy" sizes="100vw"  alt="" class="hero_info-img"></div>
+            <div class="hero_info-imagen"><img src="<?= $li_hero_main_image; ?>" loading="lazy" sizes="100vw"  alt="" class="hero_info-img"></div>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@ $li_desp_products_2 = carbon_get_post_meta(get_the_ID(), 'li_desp_products_2');
           <div class="wrp-seccion is-center">
             <div class="trato_wrp">
               <div class="trato_seccion">
-                <p class="text-align-center">A través de este medio podrás registrar reclamos o quejas relacionados con nuestros productos, servicios o atención recibida. Nuestro compromiso es brindar una atención responsable, transparente y orientada a mejorar continuamente la experiencia de nuestros clientes.</p>
+                <p class="text-align-center"><?= $li_desp_products_1; ?></p>
               </div>
             </div>
             <div class="form_cointent w-form">
@@ -96,7 +96,7 @@ $li_desp_products_2 = carbon_get_post_meta(get_the_ID(), 'li_desp_products_2');
               </div>
             </div>
             <div class="form_aviso">
-              <p>Tu reclamo será atendido en un plazo de 15 días hábiles.<br>Recibirás una respuesta al correo electrónico que ingresaste en este formulario.</p>
+              <?= $li_desp_products_2; ?>
             </div>
           </div>
         </div>

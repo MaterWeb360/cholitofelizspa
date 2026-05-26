@@ -2,33 +2,27 @@
 <?php 
 
 // Banner
-$ab_hero_title_1     = carbon_get_post_meta(get_the_ID(), 'ab_hero_title_1');
-$ab_hero_title_2     = carbon_get_post_meta(get_the_ID(), 'ab_hero_title_2');
-$ab_hero_description = carbon_get_post_meta(get_the_ID(), 'ab_hero_description');
-$ab_hero_main_image  = carbon_get_post_meta(get_the_ID(), 'ab_hero_main_image');
+  $ab_hero_title_1     = carbon_get_post_meta(get_the_ID(), 'ab_hero_title_1');
+  $ab_hero_title_2     = carbon_get_post_meta(get_the_ID(), 'ab_hero_title_2');
+  $ab_hero_description = carbon_get_post_meta(get_the_ID(), 'ab_hero_description');
+  $ab_hero_main_image  = carbon_get_post_meta(get_the_ID(), 'ab_hero_main_image');
 
 // Nuestra Historia
-$ab_history_section_title_1   = carbon_get_post_meta(get_the_ID(), 'ab_history_section_title_1');
-$ab_history_section_title_2   = carbon_get_post_meta(get_the_ID(), 'ab_history_section_title_2');
-$ab_history_section_description = carbon_get_post_meta(get_the_ID(), 'ab_history_section_description');
-$ab_history_title_1           = carbon_get_post_meta(get_the_ID(), 'ab_history_title_1');
-$ab_history_title_2           = carbon_get_post_meta(get_the_ID(), 'ab_history_title_2');
-$ab_history_description       = carbon_get_post_meta(get_the_ID(), 'ab_history_description');
-$ab_history_featured_text     = carbon_get_post_meta(get_the_ID(), 'ab_history_featured_text');
-$ab_history_main_image        = carbon_get_post_meta(get_the_ID(), 'ab_history_main_image');
-$ab_history_cards             = carbon_get_post_meta(get_the_ID(), 'ab_history_cards');
-
-// Nuestras Tiendas
-$ab_stores_title_1     = carbon_get_post_meta(get_the_ID(), 'ab_stores_title_1');
-$ab_stores_title_2     = carbon_get_post_meta(get_the_ID(), 'ab_stores_title_2');
-$ab_stores_description = carbon_get_post_meta(get_the_ID(), 'ab_stores_description');
-$ab_stores_locations   = carbon_get_post_meta(get_the_ID(), 'ab_stores_locations');
+  $ab_history_section_title_1   = carbon_get_post_meta(get_the_ID(), 'ab_history_section_title_1');
+  $ab_history_section_title_2   = carbon_get_post_meta(get_the_ID(), 'ab_history_section_title_2');
+  $ab_history_section_description = carbon_get_post_meta(get_the_ID(), 'ab_history_section_description');
+  $ab_history_title_1           = carbon_get_post_meta(get_the_ID(), 'ab_history_title_1');
+  $ab_history_title_2           = carbon_get_post_meta(get_the_ID(), 'ab_history_title_2');
+  $ab_history_description       = carbon_get_post_meta(get_the_ID(), 'ab_history_description');
+  $ab_history_featured_text     = carbon_get_post_meta(get_the_ID(), 'ab_history_featured_text');
+  $ab_history_main_image        = carbon_get_post_meta(get_the_ID(), 'ab_history_main_image');
+  $ab_history_cards             = carbon_get_post_meta(get_the_ID(), 'ab_history_cards');
 
 // Productos de Interés
-$ab_featured_products_title_1    = carbon_get_post_meta(get_the_ID(), 'ab_featured_products_title_1');
-$ab_featured_products_title_2    = carbon_get_post_meta(get_the_ID(), 'ab_featured_products_title_2');
-$ab_featured_products_description = carbon_get_post_meta(get_the_ID(), 'ab_featured_products_description');
-$ab_featured_products            = carbon_get_post_meta(get_the_ID(), 'ab_featured_products');
+  $ab_featured_products_title_1    = carbon_get_post_meta(get_the_ID(), 'ab_featured_products_title_1');
+  $ab_featured_products_title_2    = carbon_get_post_meta(get_the_ID(), 'ab_featured_products_title_2');
+  $ab_featured_products_description = carbon_get_post_meta(get_the_ID(), 'ab_featured_products_description');
+  $ab_featured_products            = carbon_get_post_meta(get_the_ID(), 'ab_featured_products');
 
 ?>
     <section class="seccion">
@@ -36,87 +30,120 @@ $ab_featured_products            = carbon_get_post_meta(get_the_ID(), 'ab_featur
         <div class="container-seccion">
           <div class="wrp-seccion _2col">
             <div class="herop_info">
-              <h1 class="heading-h2">Mas que una tienda,<br><span class="text-color-orange">somos parte de su familia</span></h1>
-              <p class="hero-prf">En <span class="text-color-verde"><strong>Cholito Feliz Peto Shop</strong></span> amamos a los animales y creemos que se merecen lo mejor.</p>
+              <h1 class="heading-h2">
+                <?= esc_html($ab_hero_title_1); ?><br>
+                <span class="text-color-orange"><?= esc_html($ab_hero_title_2); ?></span>
+              </h1>
+
+              <div class="hero-prf">
+                <?= apply_filters('the_content', $ab_hero_description); ?>
+              </div>
             </div>
-            <div class="hero_info-imagen"><img src="<?php echo get_template_directory_uri(); ?>/images/16149b45ed4da247edea5bd5df5efdae-removebg-preview-1-1.png" loading="lazy"  alt="" class="hero_info-img"></div>
+
+            <div class="hero_info-imagen">
+              <img src="<?= esc_url($ab_hero_main_image); ?>" loading="lazy" alt="" class="hero_info-img">
+            </div>
           </div>
         </div>
       </div>
-      <div class="secccion-bg"><img alt="" src="<?php echo get_template_directory_uri(); ?>/images/Banner-interna-1.jpg" loading="lazy" class="seccion-slider_fondo"></div>
+
+      <div class="secccion-bg">
+        <img alt="" src="<?php echo get_template_directory_uri(); ?>/images/Banner-interna-1.jpg" loading="lazy" class="seccion-slider_fondo">
+      </div>
     </section>
     <section class="seccion">
       <div class="padding-seccion">
         <div class="container-seccion">
           <div class="wrp-seccion is-center">
-            <div class="title-seccion"><img src="<?php echo get_template_directory_uri(); ?>/images/Group-86.png" loading="lazy" alt="" class="title_alas">
-              <h1 class="subtitle-seccion"><span>Cholito Feliz</span><br><span class="subtitle-down-seccion">una tienda para mascotas</span></h1><img src="<?php echo get_template_directory_uri(); ?>/images/Group-85.png" loading="lazy" alt="" class="title_alas">
+
+            <div class="title-seccion">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Group-86.png" loading="lazy" alt="" class="title_alas">
+
+              <h1 class="subtitle-seccion">
+                <span><?= esc_html($ab_history_section_title_1); ?></span><br>
+                <span class="subtitle-down-seccion"><?= esc_html($ab_history_section_title_2); ?></span>
+              </h1>
+
+              <img src="<?php echo get_template_directory_uri(); ?>/images/Group-85.png" loading="lazy" alt="" class="title_alas">
             </div>
-            <p class="titulo_desp">Encuentra la sede más cercana y ven por <br>todo lo que tu mascota necesita.</p>
+
+            <div class="titulo_desp">
+              <?= apply_filters('the_content', $ab_history_section_description); ?>
+            </div>
+
             <div class="historia_grid">
+
               <div class="historia_col1">
+
                 <div class="historia_head">
+
                   <div class="historia_title">
-                    <div class="historia_titulos">NUESTRA<br><span class="text-color-orange">HISTORIA</span></div><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-74.png" loading="lazy" alt="">
+                    <div class="historia_titulos">
+                      <?= esc_html($ab_history_title_1); ?><br>
+                      <span class="text-color-orange"><?= esc_html($ab_history_title_2); ?></span>
+                    </div>
+
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Frame-74.png" loading="lazy" alt="">
                   </div>
+
                   <div class="historia_descripcion">
-                    <p><strong class="text-color-orange">Cholito feliz </strong>nació del amor por nuestras mascotas y el deseo de ofrecerle lo mejor.Somos una tienda 100% peruana que selecciona con cariño productos de calidad para su bienestar y felicidad.</p>
-                    <div><strong>Lo mejor para quienes amas, siempre.</strong></div>
+                    <?= apply_filters('the_content', $ab_history_description); ?>
+
+                    <div>
+                      <strong><?= esc_html($ab_history_featured_text); ?></strong>
+                    </div>
                   </div>
+
                 </div>
-                <div class="historia_body"><img src="<?php echo get_template_directory_uri(); ?>/images/image-8.png" loading="lazy"  alt="" class="history_ct"></div>
+
+                <div class="historia_body">
+                  <img src="<?= esc_url($ab_history_main_image); ?>" loading="lazy" alt="" class="history_ct">
+                </div>
+
               </div>
+
               <div class="historia_col2">
-                <div class="historia_box">
-                  <div class="historia_head-trajeta">
-                    <div class="historia_subtitle"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-105.svg" loading="lazy" alt="" class="historia_title-icon">
-                      <div class="historia_subtitulos">TODO <span class="text-color-orange">COMENZÓ</span></div>
+
+                <?php if (!empty($ab_history_cards)) : ?>
+                  <?php foreach ($ab_history_cards as $card) : ?>
+                    <div class="historia_box">
+
+                      <div class="historia_head-trajeta">
+
+                        <div class="historia_subtitle">
+                          <img src="<?= wp_get_attachment_image_url($card['icon'], 'full'); ?>" loading="lazy" alt="" class="historia_title-icon">
+
+                          <div class="historia_subtitulos">
+                            <?= esc_html($card['title_1']); ?>
+                            <span class="text-color-orange"><?= esc_html($card['title_2']); ?></span>
+                          </div>
+                        </div>
+
+                        <div class="historia_descripcionmin">
+                          <?= apply_filters('the_content', $card['description']); ?>
+                        </div>
+
+                      </div>
+
+                      <div class="historia_body">
+                        <img src="<?= wp_get_attachment_image_url($card['image'], 'full'); ?>" loading="lazy" alt="" class="historia_modelito">
+                      </div>
+
                     </div>
-                    <div class="historia_descripcionmin">
-                      <p>Empezamos con un pequeño sueño: ayudar a más mascotas a vivir mejor, con productos seguros, confiables y de calidad.</p>
-                    </div>
-                  </div>
-                  <div class="historia_body"><img src="<?php echo get_template_directory_uri(); ?>/images/ChatGPT-Image-28-abr-2026-10_27_52-p.m.-1.png" loading="lazy" alt="" class="historia_modelito"></div>
-                </div>
-                <div class="historia_box">
-                  <div class="historia_head-trajeta">
-                    <div class="historia_subtitle"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-105.svg" loading="lazy" alt="" class="historia_title-icon">
-                      <div class="historia_subtitulos">TODO <span class="text-color-orange">COMENZÓ</span></div>
-                    </div>
-                    <div class="historia_descripcionmin">
-                      <p>Empezamos con un pequeño sueño: ayudar a más mascotas a vivir mejor, con productos seguros, confiables y de calidad.</p>
-                    </div>
-                  </div>
-                  <div class="historia_body"><img src="<?php echo get_template_directory_uri(); ?>/images/ChatGPT-Image-28-abr-2026-10_27_52-p.m.-1-1.png" loading="lazy" alt="" class="historia_modelito"></div>
-                </div>
-                <div class="historia_box">
-                  <div class="historia_head-trajeta">
-                    <div class="historia_subtitle"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-105.svg" loading="lazy" alt="" class="historia_title-icon">
-                      <div class="historia_subtitulos">TODO <span class="text-color-orange">COMENZÓ</span></div>
-                    </div>
-                    <div class="historia_descripcionmin">
-                      <p>Empezamos con un pequeño sueño: ayudar a más mascotas a vivir mejor, con productos seguros, confiables y de calidad.</p>
-                    </div>
-                  </div>
-                  <div class="historia_body"><img src="<?php echo get_template_directory_uri(); ?>/images/ChatGPT-Image-28-abr-2026-10_27_52-p.m.-1-2.png" loading="lazy" alt="" class="historia_modelito"></div>
-                </div>
-                <div class="historia_box">
-                  <div class="historia_head-trajeta">
-                    <div class="historia_subtitle"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-105.svg" loading="lazy" alt="" class="historia_title-icon">
-                      <div class="historia_subtitulos">TODO <span class="text-color-orange">COMENZÓ</span></div>
-                    </div>
-                    <div class="historia_descripcionmin">
-                      <p>Empezamos con un pequeño sueño: ayudar a más mascotas a vivir mejor, con productos seguros, confiables y de calidad.</p>
-                    </div>
-                  </div>
-                  <div class="historia_body"><img src="<?php echo get_template_directory_uri(); ?>/images/ChatGPT-Image-5-may-2026-12_30_49-a.m.-1.png" loading="lazy" alt="" class="historia_modelito"></div>
-                </div>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+
               </div>
+
             </div>
+
           </div>
         </div>
       </div>
-      <div class="secccion-bg"><img alt="" src="<?php echo get_template_directory_uri(); ?>/images/Categorías-principales-de-productos-1.jpg" loading="lazy" class="seccion-slider_fondo"></div>
+
+      <div class="secccion-bg">
+        <img alt="" src="<?php echo get_template_directory_uri(); ?>/images/Categorías-principales-de-productos-1.jpg" loading="lazy" class="seccion-slider_fondo">
+      </div>
     </section>
     <section class="seccion">
       <div class="padding-seccion">
@@ -232,12 +259,12 @@ $ab_featured_products            = carbon_get_post_meta(get_the_ID(), 'ab_featur
         <div class="container-seccion">
           <div class="wrp-seccion is-center">
             <div class="title-seccion"><img src="<?php echo get_template_directory_uri(); ?>/images/Group-86.png" loading="lazy" alt="" class="title_alas">
-              <h1 class="subtitle-seccion"><span>Productos que</span><span class="subtitle-down-seccion">pueden interesarte</span></h1><img src="<?php echo get_template_directory_uri(); ?>/images/Group-85.png" loading="lazy" alt="" class="title_alas">
+              <h1 class="subtitle-seccion"><span><?= $ab_featured_products_title_1 ; ?></span><span class="subtitle-down-seccion"><?= $ab_featured_products_title_2 ?></span></h1><img src="<?php echo get_template_directory_uri(); ?>/images/Group-85.png" loading="lazy" alt="" class="title_alas">
             </div>
             <div class="title-seccion is-hide"><img src="<?php echo get_template_directory_uri(); ?>/images/comilla-titular-left.png" loading="lazy" alt="">
               <h1 class="subtitle-seccion"><span>Los artículos favoritos</span><span class="subtitle-down-seccion">de nuetsros clientes</span></h1><img src="<?php echo get_template_directory_uri(); ?>/images/comilla-titular-right.png" loading="lazy" alt="">
             </div>
-            <p class="titulo_desp">Lorem ipsum, sobre productos que pueden interesar, texto mencionando algun producto <br>muy vendido y buscado en google para mascotas. </p>
+            <p class="titulo_desp"><?= $ab_featured_products_description; ?></p>
             <div data-delay="1000" data-animation="slide" class="slider_productos w-slider" data-autoplay="true" data-easing="ease-in-out-sine" data-hide-arrows="true" data-disable-swipe="true" data-autoplay-limit="0" data-nav-spacing="3" data-duration="800" data-infinite="true">
               <div class="slider-mask_productos w-slider-mask">
                 <div class="slider_productos-slider w-slide">

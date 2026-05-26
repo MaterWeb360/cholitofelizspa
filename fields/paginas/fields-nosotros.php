@@ -21,7 +21,7 @@ function cf_nosotros_fields() {
         Field::make('text', 'ab_hero_title_2', 'Título principal - Línea 2')
             ->set_width(50),
 
-        Field::make('textarea', 'ab_hero_description', 'Descripción')
+        Field::make('rich_text', 'ab_hero_description', 'Descripción')
             ->set_width(50),
 
         Field::make('image', 'ab_hero_main_image', 'Imagen principal')
@@ -70,7 +70,6 @@ function cf_nosotros_fields() {
 
 	            Field::make('image', 'icon', 'Ícono')
 	                ->set_width(30)
-	                ->set_value_type('url')
 	                ->set_help_text('Ícono mostrado junto al título.'),
 
 	            Field::make('text', 'title_1', 'Título - Línea 1')
@@ -87,7 +86,6 @@ function cf_nosotros_fields() {
 
 	            Field::make('image', 'image', 'Imagen')
 	                ->set_width(50)
-	                ->set_value_type('url')
 	                ->set_help_text('Imagen mostrada en la parte inferior de la tarjeta.'),
 
 	        ])

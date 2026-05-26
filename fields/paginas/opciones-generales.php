@@ -11,8 +11,181 @@ function cf_opciones_generales_fields() {
 
         ->add_tab('Menu', [
 
-        ])
+            Field::make('image', 'gl_menu_logo', 'Logo')
+                ->set_width(100)
+                ->set_help_text('Logo principal mostrado en la cabecera.'),
 
+            Field::make('complex', 'gl_menu_trust_items', 'Beneficios inferiores')
+                ->set_layout('tabbed-horizontal')
+                ->set_help_text('Beneficios mostrados en la parte inferior de todos los mega menús.')
+                ->add_fields([
+
+                    Field::make('image', 'icon', 'Icono')
+                        ->set_width(30),
+
+                    Field::make('text', 'text', 'Texto')
+                        ->set_width(70),
+
+                ]),
+
+            Field::make('complex', 'gl_menu_items', 'Items del menú')
+                ->set_layout('tabbed-horizontal')
+                ->add_fields([
+
+                    Field::make('image', 'icon', 'Icono del menú')
+                        ->set_width(25),
+
+                    Field::make('text', 'title', 'Título')
+                        ->set_width(25),
+
+                    Field::make('select', 'menu_type', 'Tipo de menú')
+                        ->add_options([
+                            'simple' => 'Link simple',
+                            'institutional' => 'Institucional',
+                            'categories_woo' => 'Categorías WooCommerce',
+                        ])
+                        ->set_width(25),
+
+                    Field::make('text', 'page_linky', 'Link')
+                        ->set_help_text('Página enlazada para el item del menú.')
+                        ->set_conditional_logic([
+                            'relation' => 'AND',
+                            [
+                                'field' => 'menu_type',
+                                'value' => 'simple',
+                                'compare' => '=',
+                            ],
+                        ])
+                        ->set_width(25),
+
+                    Field::make('image', 'character_image', 'Imagen lateral')
+                        ->set_width(100)
+                        ->set_help_text('Imagen mostrada al lado derecho del mega menú.')
+                        ->set_conditional_logic([
+                            'relation' => 'AND',
+                            [
+                                'field' => 'menu_type',
+                                'value' => ['institutional', 'categories_woo'],
+                                'compare' => 'IN',
+                            ],
+                        ]),
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | COLUMNAS INSTITUCIONALES
+                    |--------------------------------------------------------------------------
+                    */
+
+                    Field::make('complex', 'institutional_columns', 'Columnas institucionales')
+                        ->set_layout('tabbed-horizontal')
+                        ->set_help_text('Columnas utilizadas para el menú institucional.')
+                        ->set_conditional_logic([
+                            'relation' => 'AND',
+                            [
+                                'field' => 'menu_type',
+                                'value' => 'institutional',
+                                'compare' => '=',
+                            ],
+                        ])
+                        ->add_fields([
+
+                            Field::make('image', 'icon', 'Icono')
+                                ->set_width(25),
+
+                            Field::make('text', 'title', 'Título')
+                                ->set_width(75),
+
+                            Field::make('complex', 'links', 'Links')
+                                ->set_layout('tabbed-horizontal')
+                                ->add_fields([
+
+                                    Field::make('text', 'label', 'Texto')
+                                        ->set_width(50),
+
+                                    Field::make('text', 'url', 'URL')
+                                        ->set_width(50),
+
+                                ]),
+
+                        ]),
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | REDES SOCIALES
+                    |--------------------------------------------------------------------------
+                    */
+
+                    Field::make('complex', 'social_links', 'Redes sociales')
+                        ->set_layout('tabbed-horizontal')
+                        ->set_help_text('Redes sociales mostradas dentro del menú institucional.')
+                        ->set_conditional_logic([
+                            'relation' => 'AND',
+                            [
+                                'field' => 'menu_type',
+                                'value' => 'institutional',
+                                'compare' => '=',
+                            ],
+                        ])
+                        ->add_fields([
+
+                            Field::make('image', 'icon', 'Icono')
+                                ->set_width(25),
+
+                            Field::make('text', 'label', 'Texto')
+                                ->set_width(35),
+
+                            Field::make('text', 'url', 'URL')
+                                ->set_width(40),
+
+                        ]),
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | COLUMNAS WOOCOMMERCE
+                    |--------------------------------------------------------------------------
+                    */
+
+                    Field::make('complex', 'category_columns', 'Columnas de categorías')
+                        ->set_layout('tabbed-horizontal')
+                        ->set_help_text('Columnas utilizadas para Perro, Gato u otras mascotas.')
+                        ->set_conditional_logic([
+                            'relation' => 'AND',
+                            [
+                                'field' => 'menu_type',
+                                'value' => 'categories_woo',
+                                'compare' => '=',
+                            ],
+                        ])
+                        ->add_fields([
+
+                            Field::make('image', 'icon', 'Icono')
+                                ->set_width(25),
+
+                            Field::make('text', 'title', 'Título')
+                                ->set_width(37),
+
+                            Field::make('text', 'subtitle', 'Subtítulo')
+                                ->set_width(38),
+
+                            Field::make('association', 'parent_category', 'Categoría principal')
+                                ->set_types([
+                                    [
+                                        'type' => 'term',
+                                        'taxonomy' => 'product_cat',
+                                    ]
+                                ])
+                                ->set_width(100)
+                                ->set_help_text('Categoría principal de WooCommerce. Las subcategorías se mostrarán automáticamente.'),
+
+                            Field::make('text', 'button_text', 'Texto del botón')
+                                ->set_width(50)
+                                ->set_help_text('Ejemplo: Ver todos'),
+
+                        ]),
+
+                ]),
+
+        ])
         ->add_tab('Footer', [
 
         ])
@@ -53,7 +226,6 @@ function cf_opciones_generales_fields() {
 
                     Field::make('image', 'store_image', 'Imagen de la sede')
                         ->set_width(50)
-                        ->set_value_type('url')
                         ->set_help_text('Fotografía principal de la sede.'),
 
                     Field::make('textarea', 'reference_text', 'Referencia')
