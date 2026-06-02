@@ -145,115 +145,7 @@
         <img alt="" src="<?php echo get_template_directory_uri(); ?>/images/Categorías-principales-de-productos-1.jpg" loading="lazy" class="seccion-slider_fondo">
       </div>
     </section>
-    <section class="seccion">
-      <div class="padding-seccion">
-        <div class="container-seccion">
-          <div class="wrp-seccion is-center">
-            <div class="title-seccion"><img src="<?php echo get_template_directory_uri(); ?>/images/Group-86.png" loading="lazy" alt="" class="title_alas">
-              <h1 class="subtitle-seccion"><span>Visitanos en</span><br><span class="subtitle-down-seccion">nuestras tiendas</span></h1><img src="<?php echo get_template_directory_uri(); ?>/images/Group-85.png" loading="lazy" alt="" class="title_alas">
-            </div>
-            <p class="titulo_desp">Encuentra la sede más cercana y ven por <br>todo lo que tu mascota necesita.</p>
-            <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="sedes_tab w-tabs">
-              <div class="sedes_tab-main w-tab-menu">
-                <a data-w-tab="Tab 1" class="sedes_tab-item w-inline-block w-tab-link w--current"><img src="<?php echo get_template_directory_uri(); ?>/images/pata-2.png" loading="lazy" alt="" class="sedes_tab-icon">
-                  <div>SEDE ROSASPATA</div>
-                </a>
-                <a data-w-tab="Tab 2" class="sedes_tab-item w-inline-block w-tab-link"><img src="<?php echo get_template_directory_uri(); ?>/images/pata-2.png" loading="lazy" alt="" class="sedes_tab-icon">
-                  <div>SEDE LA CULTURA</div>
-                </a>
-              </div>
-              <div class="sedes_tab-content w-tab-content">
-                <div data-w-tab="Tab 1" class="sedes_tab-pane w-tab-pane w--tab-active">
-                  <div class="sedes_tab-box">
-                    <div class="sedes_code w-embed w-iframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.2796869783238!2d-71.96924292486767!3d-13.518419886849475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd753615a08d9%3A0xf52feaef1184374a!2sCholito%20feliz%20pet%20shop%20spa!5e0!3m2!1ses!2spe!4v1778276792244!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                    <div class="sedes_tab-foto"><img src="<?php echo get_template_directory_uri(); ?>/images/ChatGPT-Image-8-may-2026-04_56_11-p.m-1.png" loading="lazy" alt="" class="sedes_tab-imagen">
-                      <div class="sedes_tab-msg">
-                        <div class="text-size-medium">Referencia:</div>
-                        <div>Nuestra tienda esta ubicada al lado del mercado, en la calle tal.</div>
-                      </div>
-                    </div>
-                    <div class="sedes_tab-infosede">
-                      <div class="sedes_tab-subtitulo">
-                        <div class="etiqueta-orange">
-                          <div>Sede</div>
-                        </div>
-                        <div class="heading-h2">Rosaspata</div>
-                      </div><img src="<?php echo get_template_directory_uri(); ?>/images/Group-76.png" loading="lazy" alt="">
-                      <div class="sedes_tab-list">
-                        <div class="sedes_tab-listitem"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-125.png" loading="lazy" alt="" class="sedes_tab-icono">
-                          <div class="sedes_tab-txt">
-                            <div class="sedes_tab-titulo">Dirección</div>
-                            <div>Av. Reducto 1233, rosaspata mercado.</div>
-                          </div>
-                        </div>
-                        <div class="sedes_tab-listitem"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-126.png" loading="lazy" alt="" class="sedes_tab-icono">
-                          <div class="sedes_tab-txt">
-                            <div class="sedes_tab-titulo">Teléfono</div>
-                            <div>+51 951 951 951</div>
-                          </div>
-                        </div>
-                        <div class="sedes_tab-listitem"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-125.png" loading="lazy" alt="" class="sedes_tab-icono">
-                          <div class="sedes_tab-txt">
-                            <div class="sedes_tab-titulo">Horario de atención</div>
-                            <div>Lunes a Domingo 9:00 a.m. - 9:00 p.m.</div>
-                          </div>
-                        </div>
-                      </div>
-                      <a href="#" class="button-icon is-orange is-full w-inline-block"><img src="<?php echo get_template_directory_uri(); ?>/images/telegrama-1.svg" loading="lazy" alt="" class="button-icon-medium">
-                        <div><strong>CÓMO LLEGAR</strong></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div data-w-tab="Tab 2" class="sedes_tab-pane w-tab-pane">
-                  <div class="sedes_tab-box">
-                    <div class="sedes_code w-embed w-iframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.2796869783238!2d-71.96924292486767!3d-13.518419886849475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd753615a08d9%3A0xf52feaef1184374a!2sCholito%20feliz%20pet%20shop%20spa!5e0!3m2!1ses!2spe!4v1778276792244!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                    <div class="sedes_tab-foto"><img src="<?php echo get_template_directory_uri(); ?>/images/ChatGPT-Image-8-may-2026-04_56_11-p.m-1.png" loading="lazy" alt="" class="sedes_tab-imagen">
-                      <div class="sedes_tab-msg">
-                        <div class="text-size-medium">Referencia:</div>
-                        <div>Nuestra tienda esta ubicada al lado del mercado, en la calle tal.</div>
-                      </div>
-                    </div>
-                    <div class="sedes_tab-infosede">
-                      <div class="sedes_tab-subtitulo">
-                        <div class="etiqueta-orange">
-                          <div>Sede</div>
-                        </div>
-                        <div class="heading-h2">La cultura</div>
-                      </div><img src="<?php echo get_template_directory_uri(); ?>/images/Group-76.png" loading="lazy" alt="">
-                      <div class="sedes_tab-list">
-                        <div class="sedes_tab-listitem"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-125.png" loading="lazy" alt="" class="sedes_tab-icono">
-                          <div class="sedes_tab-txt">
-                            <div class="sedes_tab-titulo">Dirección</div>
-                            <div>Av. Reducto 1233, rosaspata mercado.</div>
-                          </div>
-                        </div>
-                        <div class="sedes_tab-listitem"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-126.png" loading="lazy" alt="" class="sedes_tab-icono">
-                          <div class="sedes_tab-txt">
-                            <div class="sedes_tab-titulo">Teléfono</div>
-                            <div>+51 951 951 951</div>
-                          </div>
-                        </div>
-                        <div class="sedes_tab-listitem"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-125.png" loading="lazy" alt="" class="sedes_tab-icono">
-                          <div class="sedes_tab-txt">
-                            <div class="sedes_tab-titulo">Horario de atención</div>
-                            <div>Lunes a Domingo 9:00 a.m. - 9:00 p.m.</div>
-                          </div>
-                        </div>
-                      </div>
-                      <a href="#" class="button-icon is-orange is-full w-inline-block"><img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/telegrama-1.svg" alt="" class="button-icon-medium">
-                        <div><strong>CÓMO LLEGAR</strong></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="secccion-bg"><img alt="" src="<?php echo get_template_directory_uri(); ?>/images/fondo-sedes-1.jpg" loading="lazy" class="seccion-slider_fondo"></div>
-    </section>
+    <?php get_template_part('parts/sedes'); ?>
     <section class="seccion is-overflow-hidden">
       <div class="padding-seccion">
         <div class="container-seccion">
@@ -265,171 +157,107 @@
               <h1 class="subtitle-seccion"><span>Los artículos favoritos</span><span class="subtitle-down-seccion">de nuetsros clientes</span></h1><img src="<?php echo get_template_directory_uri(); ?>/images/comilla-titular-right.png" loading="lazy" alt="">
             </div>
             <p class="titulo_desp"><?= $ab_featured_products_description; ?></p>
-            <div data-delay="1000" data-animation="slide" class="slider_productos w-slider" data-autoplay="true" data-easing="ease-in-out-sine" data-hide-arrows="true" data-disable-swipe="true" data-autoplay-limit="0" data-nav-spacing="3" data-duration="800" data-infinite="true">
-              <div class="slider-mask_productos w-slider-mask">
-                <div class="slider_productos-slider w-slide">
-                  <a data-w-id="0c779a05-9c14-a5c5-6725-0dc30b41e470" href="#" class="tarjetaproducto w-inline-block">
-                    <div class="tarjetaproducto_head">
-                      <div class="etiqueta-tarjeta">
-                        <div>TOP 1</div>
-                      </div>
-                      <div class="tarjetaproducto_head-cont"><img src="<?php echo get_template_directory_uri(); ?>/images/ChatGPT-Image-26-abr-2026-05_00_04-p.m.-1.png" loading="lazy" alt="" class="tarjetaproductos_producto"></div><img src="<?php echo get_template_directory_uri(); ?>/images/fondo-tarjeta-1.png" loading="lazy" alt="" class="tarjetaproducto_fondo">
-                    </div>
-                    <div class="tarjetaproducto_body">
-                      <div class="tarjetaproducto_nombre">Cama de felpa marca dogchow</div><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-59.png" loading="lazy" alt="" class="tarjetaproducto_etsrellas">
-                      <p>La mejor tecnología para el descanso de tu pequeño.</p>
-                      <p class="tarjetaproducto_precio">S/ 118.00</p>
-                      <div class="button is-tarjeta"><img src="<?php echo get_template_directory_uri(); ?>/images/carrito-de-compras-1.svg" loading="lazy" alt="" class="btn-icon">
-                        <div>Ver producto</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider_productos-slider w-slide">
-                  <a data-w-id="751ebc34-4a5a-53b8-3221-3b29b3053c98" href="#" class="tarjetaproducto w-inline-block">
-                    <div class="tarjetaproducto_head">
-                      <div class="etiqueta-tarjeta">
-                        <div>TOP 2</div>
-                      </div>
-                      <div class="tarjetaproducto_head-cont"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-56-1.png" loading="lazy" alt="" class="tarjetaproductos_producto"></div><img src="<?php echo get_template_directory_uri(); ?>/images/fondo-tarjeta-1.png" loading="lazy" alt="" class="tarjetaproducto_fondo">
-                    </div>
-                    <div class="tarjetaproducto_body">
-                      <div class="tarjetaproducto_nombre">Cama de felpa marca dogchow</div><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-59.png" loading="lazy" alt="" class="tarjetaproducto_etsrellas">
-                      <p>La mejor tecnología para el descanso de tu pequeño.</p>
-                      <p class="tarjetaproducto_precio">S/ 88.00</p>
-                      <div class="button is-tarjeta"><img src="<?php echo get_template_directory_uri(); ?>/images/carrito-de-compras-1.svg" loading="lazy" alt="" class="btn-icon">
-                        <div>Agregar al carrito</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider_productos-slider w-slide">
-                  <a data-w-id="6c9888ca-0858-6977-2cac-c222602693a7" href="#" class="tarjetaproducto w-inline-block">
-                    <div class="tarjetaproducto_head">
-                      <div class="etiqueta-tarjeta">
-                        <div>TOP 3</div>
-                      </div>
-                      <div class="tarjetaproducto_head-cont"><img src="<?php echo get_template_directory_uri(); ?>/images/ChatGPT-Image-26-abr-2026-05_00_04-p.m.-1.png" loading="lazy" alt="" class="tarjetaproductos_producto"></div><img src="<?php echo get_template_directory_uri(); ?>/images/fondo-tarjeta-1.png" loading="lazy" alt="" class="tarjetaproducto_fondo">
-                    </div>
-                    <div class="tarjetaproducto_body">
-                      <div class="tarjetaproducto_nombre">Cama de felpa marca dogchow</div><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-59.png" loading="lazy" alt="" class="tarjetaproducto_etsrellas">
-                      <p>La mejor tecnología para el descanso de tu pequeño.</p>
-                      <p class="tarjetaproducto_precio">S/ 15.00</p>
-                      <div class="button is-tarjeta"><img src="<?php echo get_template_directory_uri(); ?>/images/carrito-de-compras-1.svg" loading="lazy" alt="" class="btn-icon">
-                        <div>Agregar al carrito</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider_productos-slider w-slide">
-                  <a data-w-id="2e8d3b90-efa3-412e-4186-a35f3a6c4437" href="#" class="tarjetaproducto w-inline-block">
-                    <div class="tarjetaproducto_head">
-                      <div class="etiqueta-tarjeta">
-                        <div>TOP 4</div>
-                      </div>
-                      <div class="tarjetaproducto_head-cont"><img src="<?php echo get_template_directory_uri(); ?>/images/Group-60.png" loading="lazy" alt="" class="tarjetaproductos_producto"></div><img src="<?php echo get_template_directory_uri(); ?>/images/fondo-tarjeta-1.png" loading="lazy" alt="" class="tarjetaproducto_fondo">
-                    </div>
-                    <div class="tarjetaproducto_body">
-                      <div class="tarjetaproducto_nombre">Cama de felpa marca dogchow</div><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-59.png" loading="lazy" alt="" class="tarjetaproducto_etsrellas">
-                      <p>La mejor tecnología para el descanso de tu pequeño.</p>
-                      <p class="tarjetaproducto_precio">S/ 106.00</p>
-                      <div class="button is-tarjeta"><img src="<?php echo get_template_directory_uri(); ?>/images/carrito-de-compras-1.svg" loading="lazy" alt="" class="btn-icon">
-                        <div>Ver producto</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider_productos-slider w-slide">
-                  <a data-w-id="c4f3136c-9645-550e-111c-4fc37cee8098" href="#" class="tarjetaproducto w-inline-block">
-                    <div class="tarjetaproducto_head">
-                      <div class="etiqueta-tarjeta">
-                        <div>TOP 3</div>
-                      </div>
-                      <div class="tarjetaproducto_head-cont"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-56-1.png" loading="lazy" alt="" class="tarjetaproductos_producto"></div><img src="<?php echo get_template_directory_uri(); ?>/images/fondo-tarjeta-1.png" loading="lazy" alt="" class="tarjetaproducto_fondo">
-                    </div>
-                    <div class="tarjetaproducto_body">
-                      <div class="tarjetaproducto_nombre">Cama de felpa marca dogchow</div><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-59.png" loading="lazy" alt="" class="tarjetaproducto_etsrellas">
-                      <p>La mejor tecnología para el descanso de tu pequeño.</p>
-                      <p class="tarjetaproducto_precio">S/ 128.00</p>
-                      <div class="button is-tarjeta"><img src="<?php echo get_template_directory_uri(); ?>/images/carrito-de-compras-1.svg" loading="lazy" alt="" class="btn-icon">
-                        <div>Ver productos</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider_productos-slider w-slide">
-                  <a data-w-id="21474a7d-8ed3-d649-672a-8853092f2441" href="#" class="tarjetaproducto w-inline-block">
-                    <div class="tarjetaproducto_head">
-                      <div class="etiqueta-tarjeta">
-                        <div>TOP 3</div>
-                      </div>
-                      <div class="tarjetaproducto_head-cont"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-56-1.png" loading="lazy" alt="" class="tarjetaproductos_producto"></div><img src="<?php echo get_template_directory_uri(); ?>/images/fondo-tarjeta-1.png" loading="lazy" alt="" class="tarjetaproducto_fondo">
-                    </div>
-                    <div class="tarjetaproducto_body">
-                      <div class="tarjetaproducto_nombre">Cama de felpa marca dogchow</div><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-59.png" loading="lazy" alt="" class="tarjetaproducto_etsrellas">
-                      <p>La mejor tecnología para el descanso de tu pequeño.</p>
-                      <p class="tarjetaproducto_precio">S/ 128.00</p>
-                      <div class="button is-tarjeta"><img src="<?php echo get_template_directory_uri(); ?>/images/carrito-de-compras-1.svg" loading="lazy" alt="" class="btn-icon">
-                        <div>Agregar al carrito</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider_productos-slider w-slide">
-                  <a data-w-id="cf1f3975-271e-952b-9d0e-8109faa43c3e" href="#" class="tarjetaproducto w-inline-block">
-                    <div class="tarjetaproducto_head">
-                      <div class="etiqueta-tarjeta">
-                        <div>TOP 3</div>
-                      </div>
-                      <div class="tarjetaproducto_head-cont"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-56-1.png" loading="lazy" alt="" class="tarjetaproductos_producto"></div><img src="<?php echo get_template_directory_uri(); ?>/images/fondo-tarjeta-1.png" loading="lazy" alt="" class="tarjetaproducto_fondo">
-                    </div>
-                    <div class="tarjetaproducto_body">
-                      <div class="tarjetaproducto_nombre">Cama de felpa marca dogchow</div><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-59.png" loading="lazy" alt="" class="tarjetaproducto_etsrellas">
-                      <p>La mejor tecnología para el descanso de tu pequeño.</p>
-                      <p class="tarjetaproducto_precio">S/ 128.00</p>
-                      <div class="button is-tarjeta"><img src="<?php echo get_template_directory_uri(); ?>/images/carrito-de-compras-1.svg" loading="lazy" alt="" class="btn-icon">
-                        <div>Agregar al carrito</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider_productos-slider w-slide">
-                  <a data-w-id="8e4590cc-3dff-0332-386e-a76064b2eb72" href="#" class="tarjetaproducto w-inline-block">
-                    <div class="tarjetaproducto_head">
-                      <div class="etiqueta-tarjeta">
-                        <div>TOP 3</div>
-                      </div>
-                      <div class="tarjetaproducto_head-cont"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-56-1.png" loading="lazy" alt="" class="tarjetaproductos_producto"></div><img src="<?php echo get_template_directory_uri(); ?>/images/fondo-tarjeta-1.png" loading="lazy" alt="" class="tarjetaproducto_fondo">
-                    </div>
-                    <div class="tarjetaproducto_body">
-                      <div class="tarjetaproducto_nombre">Cama de felpa marca dogchow</div><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-59.png" loading="lazy" alt="" class="tarjetaproducto_etsrellas">
-                      <p>La mejor tecnología para el descanso de tu pequeño.</p>
-                      <p class="tarjetaproducto_precio">S/ 128.00</p>
-                      <div class="button is-tarjeta"><img src="<?php echo get_template_directory_uri(); ?>/images/carrito-de-compras-1.svg" loading="lazy" alt="" class="btn-icon">
-                        <div>Agregar al carrito</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider_productos-slider w-slide">
-                  <a data-w-id="e65371ae-171c-9311-9b9d-2a060e3d9da2" href="#" class="tarjetaproducto w-inline-block">
-                    <div class="tarjetaproducto_head">
-                      <div class="etiqueta-tarjeta">
-                        <div>TOP 3</div>
-                      </div>
-                      <div class="tarjetaproducto_head-cont"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-56-1.png" loading="lazy" alt="" class="tarjetaproductos_producto"></div><img src="<?php echo get_template_directory_uri(); ?>/images/fondo-tarjeta-1.png" loading="lazy" alt="" class="tarjetaproducto_fondo">
-                    </div>
-                    <div class="tarjetaproducto_body">
-                      <div class="tarjetaproducto_nombre">Cama de felpa marca dogchow</div><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-59.png" loading="lazy" alt="" class="tarjetaproducto_etsrellas">
-                      <p>La mejor tecnología para el descanso de tu pequeño.</p>
-                      <p class="tarjetaproducto_precio">S/ 128.00</p>
-                      <div class="button is-tarjeta"><img src="<?php echo get_template_directory_uri(); ?>/images/carrito-de-compras-1.svg" loading="lazy" alt="" class="btn-icon">
-                        <div>Agregar al carrito</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
+            <div data-delay="2000" data-animation="slide" class="slider_productos w-slider" data-autoplay="true" data-easing="ease-in-out-sine" data-hide-arrows="true" data-disable-swipe="true" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+            <div class="slider-mask_productos w-slider-mask">
+
+                    <?php foreach ($ab_featured_products as $index => $product_data) :
+
+                        $product_id = $product_data['id'];
+                        $product    = wc_get_product($product_id);
+
+                        if (!$product) {
+                            continue;
+                        }
+
+                        $product_name        = $product->get_name();
+                        $product_permalink   = get_permalink($product_id);
+                        $product_image       = get_the_post_thumbnail_url($product_id, 'full');
+                        $product_description = wp_trim_words($product->get_short_description(), 12);
+
+                        $regular_price = $product->get_regular_price();
+                        $current_price = $product->get_price();
+                        $is_on_sale    = $product->is_on_sale();
+
+                    ?>
+
+                        <div class="slider_productos-slider w-slide">
+
+                            <a href="<?php echo esc_url($product_permalink); ?>" class="tarjetaproducto w-inline-block">
+
+                                <div class="tarjetaproducto_head">
+
+                                    <div class="etiqueta-tarjeta">
+                                        <div>TOP <?php echo $index + 1; ?></div>
+                                    </div>
+
+                                    <div class="tarjetaproducto_head-cont">
+
+                                        <?php if ($product_image) : ?>
+                                            <img
+                                                src="<?php echo esc_url($product_image); ?>"
+                                                loading="lazy"
+                                                alt="<?php echo esc_attr($product_name); ?>"
+                                                class="tarjetaproductos_producto">
+                                        <?php endif; ?>
+
+                                    </div>
+
+                                    <img
+                                        src="<?php echo get_template_directory_uri(); ?>/images/fondo-tarjeta-1.png"
+                                        loading="lazy"
+                                        alt=""
+                                        class="tarjetaproducto_fondo">
+
+                                </div>
+
+                                <div class="tarjetaproducto_body">
+
+                                    <div class="tarjetaproducto_nombre">
+                                        <?php echo esc_html($product_name); ?>
+                                    </div>
+
+                                    <img
+                                        loading="lazy"
+                                        src="<?php echo get_template_directory_uri(); ?>/images/Frame-59.png"
+                                        alt=""
+                                        class="tarjetaproducto_etsrellas">
+
+                                    <?php if (!empty($product_description)) : ?>
+                                        <p>
+                                            <?php echo esc_html($product_description); ?>
+                                        </p>
+                                    <?php endif; ?>
+
+                                    <?php if ($is_on_sale) : ?>
+                                        <p class="tarjetaproducto_precio-anterior">
+                                            <del><?php echo wc_price($regular_price); ?></del>
+                                        </p>
+                                    <?php endif; ?>
+
+                                    <p class="tarjetaproducto_precio">
+                                        <?php echo wc_price($current_price); ?>
+                                    </p>
+
+                                    <div class="button is-tarjeta">
+
+                                        <img
+                                            loading="lazy"
+                                            src="<?php echo get_template_directory_uri(); ?>/images/carrito-de-compras-1.svg"
+                                            alt=""
+                                            class="btn-icon">
+
+                                        <div>Ver producto</div>
+
+                                    </div>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    <?php endforeach; ?>
+            </div>
               <div class="slider_productos-arrow w-slider-arrow-left"><img src="<?php echo get_template_directory_uri(); ?>/images/flecha-izquierda.png" loading="lazy" alt="" class="slider_productos-arrowicon"></div>
               <div class="slider_productos-arrow is-right w-slider-arrow-right"><img src="<?php echo get_template_directory_uri(); ?>/images/flecha-izquierda-2.svg" loading="lazy" alt="" class="slider_productos-arrowicon"></div>
               <div class="is-hide w-slider-nav w-round"></div>

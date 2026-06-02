@@ -23,175 +23,177 @@
 
     <section class="seccion producto-single">
 
-    <div class="container-seccion">
+        <div class="container-seccion">
 
-        <div class="wrp-seccion producto-single_wrp">
+            <div class="wrp-seccion producto-single_wrp">
 
-            <!-- GALERÍA -->
-            <div class="producto-single_galeria">
+                <!-- GALERÍA -->
+                <div class="producto-single_galeria">
 
-                <div class="producto-single_thumbs">
+                    <div class="producto-single_thumbs">
 
-                    <div class="producto-single_thumb is-active">
+                        <div class="producto-single_thumb is-active">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
+                        </div>
+
+                        <div class="producto-single_thumb">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
+                        </div>
+
+                        <div class="producto-single_thumb">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
+                        </div>
+
+                        <div class="producto-single_thumb">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
+                        </div>
+
+                    </div>
+
+                    <div class="producto-single_imagen">
+
                         <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
-                    </div>
-
-                    <div class="producto-single_thumb">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
-                    </div>
-
-                    <div class="producto-single_thumb">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
-                    </div>
-
-                    <div class="producto-single_thumb">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
-                    </div>
-
-                </div>
-
-                <div class="producto-single_imagen">
-
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
-
-                </div>
-
-            </div>
-
-            <!-- INFORMACIÓN -->
-            <div class="producto-single_info">
-
-                <div class="producto-single_categoria">
-                    Accesorios para mascotas
-                </div>
-
-                <h1 class="producto-single_titulo">
-                    Arnés acolchado ajustable para perros
-                </h1>
-
-                <div class="producto-single_rating">
-
-                    <div class="producto-single_estrellas">
-                        ★★★★★
-                    </div>
-
-                    <div class="producto-single_reviews">
-                        128 reseñas
-                    </div>
-
-                </div>
-
-                <div class="producto-single_precio">
-                    S/ 89.90
-                </div>
-
-                <div class="producto-single_descripcion">
-                    Arnés acolchado y transpirable para brindar máxima
-                    comodidad y seguridad durante cada paseo.
-                </div>
-
-                <!-- COLORES -->
-                <div class="producto-single_bloque">
-
-                    <div class="producto-single_label">
-                        Color
-                    </div>
-
-                    <div class="producto-single_colores">
-
-                        <button class="producto-single_color is-active"></button>
-
-                        <button class="producto-single_color"></button>
-
-                        <button class="producto-single_color"></button>
-
-                        <button class="producto-single_color"></button>
 
                     </div>
 
                 </div>
 
-                <!-- TALLAS -->
-                <div class="producto-single_bloque">
+                <!-- INFORMACIÓN -->
+                <div class="producto-single_info">
 
-                    <div class="producto-single_label">
-                        Talla
+                    <div class="producto-single_categoria">
+                        Accesorios para mascotas
                     </div>
 
-                    <div class="producto-single_variaciones">
+                    <h1 class="producto-single_titulo">
+                        Arnés acolchado ajustable para perros
+                    </h1>
 
-                        <button class="producto-single_var">
-                            S
-                        </button>
+                    <div class="producto-single_rating">
 
-                        <button class="producto-single_var is-active">
-                            M
-                        </button>
+                        <div class="producto-single_estrellas">
+                            ★★★★★
+                        </div>
 
-                        <button class="producto-single_var">
-                            L
-                        </button>
-
-                        <button class="producto-single_var">
-                            XL
-                        </button>
+                        <div class="producto-single_reviews">
+                            128 reseñas
+                        </div>
 
                     </div>
 
-                </div>
-
-                <!-- CANTIDAD -->
-                <div class="producto-single_bloque">
-
-                    <div class="producto-single_label">
-                        Cantidad
+                    <div class="producto-single_precio">
+                        S/ 89.90
                     </div>
 
-                    <div class="producto-single_compra">
+                    <div class="producto-single_descripcion">
+                        Arnés acolchado y transpirable para brindar máxima
+                        comodidad y seguridad durante cada paseo.
+                    </div>
 
-                        <div class="producto-single_cantidad">
+                    <!-- COLORES -->
+                    <div class="producto-single_bloque">
 
-                            <button>-</button>
+                        <div class="producto-single_label">
+                            Color
+                        </div>
 
-                            <input type="number" value="1">
+                        <div class="producto-single_colores">
 
-                            <button>+</button>
+                            <button class="producto-single_color is-active"></button>
+
+                            <button class="producto-single_color"></button>
+
+                            <button class="producto-single_color"></button>
+
+                            <button class="producto-single_color"></button>
 
                         </div>
 
-                        <button class="producto-single_btn">
-                            Agregar al carrito
-                        </button>
+                    </div>
+
+                    <!-- TALLAS -->
+                    <div class="producto-single_bloque">
+
+                        <div class="producto-single_label">
+                            Talla
+                        </div>
+
+                        <div class="producto-single_variaciones">
+
+                            <button class="producto-single_var">
+                                S
+                            </button>
+
+                            <button class="producto-single_var is-active">
+                                M
+                            </button>
+
+                            <button class="producto-single_var">
+                                L
+                            </button>
+
+                            <button class="producto-single_var">
+                                XL
+                            </button>
+
+                        </div>
 
                     </div>
 
-                </div>
+                    <!-- CANTIDAD -->
+                    <div class="producto-single_bloque">
 
-                <a href="#" class="producto-single_btn-secundario">
-                    Comprar ahora
-                </a>
+                        <div class="producto-single_label">
+                            Cantidad
+                        </div>
 
-                <!-- BENEFICIOS -->
-                <div class="producto-single_beneficios">
+                        <div class="producto-single_compra">
 
-                    <div class="producto-single_beneficio">
-                        <div class="producto-single_beneficio-icono"></div>
-                        <span>Envíos a todo el Perú</span>
+                            <div class="producto-single_cantidad">
+
+                                <button>-</button>
+
+                                <input type="number" value="1">
+
+                                <button>+</button>
+
+                            </div>
+
+                            <button class="producto-single_btn">
+                                Agregar al carrito
+                            </button>
+
+                        </div>
+
                     </div>
 
-                    <div class="producto-single_beneficio">
-                        <div class="producto-single_beneficio-icono"></div>
-                        <span>Compra segura</span>
-                    </div>
+                    <a href="#" class="producto-single_btn-secundario">
+                        Comprar ahora
+                    </a>
 
-                    <div class="producto-single_beneficio">
-                        <div class="producto-single_beneficio-icono"></div>
-                        <span>Atención personalizada</span>
-                    </div>
+                    <!-- BENEFICIOS -->
+                    <div class="producto-single_beneficios">
 
-                    <div class="producto-single_beneficio">
-                        <div class="producto-single_beneficio-icono"></div>
-                        <span>Productos seleccionados</span>
+                        <div class="producto-single_beneficio">
+                            <div class="producto-single_beneficio-icono"></div>
+                            <span>Envíos a todo el Perú</span>
+                        </div>
+
+                        <div class="producto-single_beneficio">
+                            <div class="producto-single_beneficio-icono"></div>
+                            <span>Compra segura</span>
+                        </div>
+
+                        <div class="producto-single_beneficio">
+                            <div class="producto-single_beneficio-icono"></div>
+                            <span>Atención personalizada</span>
+                        </div>
+
+                        <div class="producto-single_beneficio">
+                            <div class="producto-single_beneficio-icono"></div>
+                            <span>Productos seleccionados</span>
+                        </div>
+
                     </div>
 
                 </div>
@@ -200,9 +202,7 @@
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
 <section class="seccion producto-detalles">

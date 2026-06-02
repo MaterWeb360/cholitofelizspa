@@ -14,8 +14,18 @@ function crb_load() {
         $mimes['svg'] = 'image/svg+xml';
         return $mimes;
     }
-    add_filter('upload_mimes', 'permitir_svg');
+add_filter('upload_mimes', 'permitir_svg');
 
+add_filter('tiny_mce_before_init', function ($init) {
+
+    $init['textcolor_map'] = '[
+        "da6936", "Naranja",
+        "4b2f1e", "Marrón",
+        "b5934b", "Dorado"
+    ]';
+
+    return $init;
+});
 require_once get_template_directory() . '/fields/paginas/fields-home.php';
 require_once get_template_directory() . '/fields/paginas/fields-nosotros.php';
 require_once get_template_directory() . '/fields/paginas/fields-contacto.php';

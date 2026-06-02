@@ -19,7 +19,7 @@ $li_desp_products_2 = carbon_get_post_meta(get_the_ID(), 'li_desp_products_2');
         <div class="container-seccion">
           <div class="wrp-seccion _2col">
             <div class="herop_info">
-              <h1 class="heading-h2"><?= $li_hero_title_1 ; ?><span class="text-color-orange"><?= $li_hero_title_1; ?></span></h1>
+              <h1 class="heading-h2"><?= $li_hero_title_1 ; ?><span class="text-color-orange"><?= $li_hero_title_2; ?></span></h1>
               <p class="hero-prf"><?= $li_hero_description; ?></p>
             </div>
             <div class="hero_info-imagen"><img src="<?= $li_hero_main_image; ?>" loading="lazy" sizes="100vw"  alt="" class="hero_info-img"></div>
@@ -34,59 +34,191 @@ $li_desp_products_2 = carbon_get_post_meta(get_the_ID(), 'li_desp_products_2');
           <div class="wrp-seccion is-center">
             <div class="trato_wrp">
               <div class="trato_seccion">
-                <p class="text-align-center"><?= $li_desp_products_1; ?></p>
+                <p class="paragraph" style="text-align: center;margin-left: auto; margin-right: auto;"><?= $li_desp_products_1; ?></p>
               </div>
             </div>
             <div class="form_cointent w-form">
-              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form_wrp" data-wf-page-id="6a0b87f256687604d192f508" data-wf-element-id="2e71a639-4cfc-e73c-f6d2-93c19a6bf6ff">
-                <div class="form_seccion">
-                  <div class="form_title">
-                    <h2 class="heading-h3">Datos del consumidor</h2>
+              <form id="libro_form" name="libro_form" method="post" class="form_wrp">
+
+                  <!-- DATOS DEL CONSUMIDOR -->
+                  <div class="form_seccion">
+                      <div class="form_title">
+                          <h2 class="heading-h3">Identificación del consumidor reclamante</h2>
+                      </div>
+
+                      <div class="form_col3">
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Nombres y apellidos <span class="text-color-red">*</span>
+                              </div>
+                              <input class="form_input w-input" type="text" name="nombre"
+                                  placeholder="Nombres y apellidos">
+                          </div>
+
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  DNI / CE <span class="text-color-red">*</span>
+                              </div>
+                              <input class="form_input w-input" type="text" name="documento"
+                                  placeholder="Número de documento">
+                          </div>
+
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Teléfono <span class="text-color-red">*</span>
+                              </div>
+                              <input class="form_input w-input" type="tel" name="telefono"
+                                  placeholder="Número de teléfono">
+                          </div>
+                      </div>
+
+                      <div class="form_col2">
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Correo electrónico <span class="text-color-red">*</span>
+                              </div>
+                              <input class="form_input w-input" type="email" name="correo"
+                                  placeholder="Correo electrónico">
+                          </div>
+
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Padre o madre (si es menor de edad)
+                              </div>
+                              <input class="form_input w-input" type="text" name="apoderado"
+                                  placeholder="Nombre del padre o madre">
+                          </div>
+                      </div>
+
+                      <div class="form_col1">
+                          <div class="form_campo">
+                              <div class="form_subtitle">Dirección</div>
+                              <input class="form_input w-input" type="text" name="direccion"
+                                  placeholder="Dirección completa">
+                          </div>
+                      </div>
                   </div>
-                  <div class="form_col3">
-                    <div class="form_campo">
-                      <div class="form_subtitle">Nombres y apellidos <span class="text-color-red">*</span></div><input class="form_input w-input" maxlength="256" name="name" data-name="Name" placeholder="Nombres y apellidos" type="text" id="name">
-                    </div>
-                    <div class="form_campo">
-                      <div class="form_subtitle">DNI / Documento de identidad <span class="text-color-red">*</span></div><input class="form_input w-input" maxlength="256" name="name" data-name="Name" placeholder="Digita tu número de identidad" type="text" id="name">
-                    </div>
-                    <div class="form_campo">
-                      <div class="form_subtitle">Correo electrónico <span class="text-color-red">*</span></div><input class="form_input w-input" maxlength="256" name="name" data-name="Name" placeholder="Ingresa tu email" type="text" id="name">
-                    </div>
+
+                  <!-- BIEN CONTRATADO -->
+                  <div class="form_seccion">
+                      <div class="form_title">
+                          <h2 class="heading-h3">Identificación del bien contratado</h2>
+                      </div>
+
+                      <div class="form_col3 is-movil">
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Tipo <span class="text-color-red">*</span>
+                              </div>
+
+                              <select class="form_input w-select" name="bien_tipo">
+                                  <option value="">Selecciona una opción</option>
+                                  <option value="Producto">Producto</option>
+                                  <option value="Servicio">Servicio</option>
+                              </select>
+                          </div>
+
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Nombre del producto o servicio <span class="text-color-red">*</span>
+                              </div>
+
+                              <input class="form_input w-input" type="text"
+                                  name="producto_servicio"
+                                  placeholder="Producto o servicio">
+                          </div>
+
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Monto reclamado
+                              </div>
+
+                              <input class="form_input w-input" type="number"
+                                  name="monto_reclamado"
+                                  placeholder="S/. 0.00">
+                          </div>
+                      </div>
+
+                      <div class="form_col1">
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Descripción del producto o servicio <span class="text-color-red">*</span>
+                              </div>
+
+                              <textarea
+                                  class="form_input w-input"
+                                  name="descripcion_bien"
+                                  placeholder="Describe el producto o servicio relacionado con el reclamo"></textarea>
+                          </div>
+                      </div>
                   </div>
-                  <div class="form_col1">
-                    <div class="form_campo">
-                      <div class="form_subtitle">Dirección (opcional)</div><input class="form_input w-input" maxlength="256" name="name" data-name="Name" placeholder="Ingresa tu dirección" type="text" id="name">
-                    </div>
+
+                  <!-- RECLAMO -->
+                  <div class="form_seccion">
+                      <div class="form_title">
+                          <h2 class="heading-h3">Detalle de la reclamación y pedido del consumidor</h2>
+                      </div>
+
+                      <div class="form_col1">
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Tipo de reclamación <span class="text-color-red">*</span>
+                              </div>
+
+                              <select class="form_input w-select" name="tipo_reclamo">
+                                  <option value="">Selecciona una opción</option>
+                                  <option value="Reclamo">Reclamo</option>
+                                  <option value="Queja">Queja</option>
+                              </select>
+
+                              <div class="form_help">
+                                  <strong>Reclamo:</strong> Disconformidad relacionada con los productos o servicios.<br>
+                                  <strong>Queja:</strong> Disconformidad no relacionada con productos o servicios o malestar respecto a la atención recibida.
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="form_col1">
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Detalle <span class="text-color-red">*</span>
+                              </div>
+
+                              <textarea
+                                  class="form_input w-input"
+                                  name="detalle"
+                                  placeholder="Describe detalladamente el motivo de tu reclamo o queja"></textarea>
+                          </div>
+                      </div>
+
+                      <div class="form_col1">
+                          <div class="form_campo">
+                              <div class="form_subtitle">
+                                  Pedido del consumidor <span class="text-color-red">*</span>
+                              </div>
+
+                              <textarea
+                                  class="form_input w-input"
+                                  name="pedido"
+                                  placeholder="Indica la solución que esperas recibir"></textarea>
+                          </div>
+                      </div>
                   </div>
-                </div>
-                <div class="form_seccion">
-                  <div class="form_title">
-                    <h2 class="heading-h3">Detalle de tu reclamo o queja</h2>
+
+                  <!-- DECLARACIÓN -->
+                  <div class="form_seccion">
+                      <label class="w-checkbox">
+                          <input type="checkbox" required>
+                          <span>
+                              Declaro que la información proporcionada es verdadera.
+                          </span>
+                      </label>
                   </div>
-                  <div class="form_col2">
-                    <div class="form_campo">
-                      <div class="form_subtitle">Tipo <span class="text-color-red">*</span></div><select id="tipo" name="tipo" data-name="tipo" class="form_input w-select">
-                        <option value="">Selecciona una opción</option>
-                        <option value="Reclamo">Reclamo</option>
-                        <option value="Queja">Queja</option>
-                      </select>
-                    </div>
-                    <div class="form_campo">
-                      <div class="form_subtitle">Fecha <span class="text-color-red">*</span></div><input class="form_input w-input" maxlength="256" name="name" data-name="Name" placeholder="Digita tu número de identidad" type="text" id="name">
-                    </div>
-                  </div>
-                  <div class="form_col1">
-                    <div class="form_campo">
-                      <div class="form_subtitle">Detalle del reclamo o queja <span class="text-color-red">*</span></div><textarea placeholder="Describe tu reclama o queja" maxlength="5000" id="field" name="field" data-name="Field" class="form_input w-input"></textarea>
-                    </div>
-                  </div>
-                  <div class="form_col1">
-                    <div class="form_campo">
-                      <div class="form_subtitle">Pedido del consumidor <span class="text-color-red">*</span></div><textarea placeholder="Índica cual es tu pedido o solución esperada" maxlength="5000" id="field" name="field" data-name="Field" class="form_input w-input"></textarea>
-                    </div>
-                  </div>
-                </div><input type="submit" data-wait="Please wait..." class="form_button w-button" value="Enviar reclamo">
+
+                  <input
+                      type="submit"
+                      class="form_button w-button"
+                      value="Enviar reclamo">
               </form>
               <div class="w-form-done">
                 <div>Thank you! Your submission has been received!</div>

@@ -55,10 +55,25 @@ function cf_home_fields() {
             Field::make('text', 'hm_categories_title_2', 'Título de la sección - Línea 2')
                 ->set_width(50)
                 ->set_help_text('Segunda línea del título principal de la sección Categorías.'),
-
-            Field::make('textarea', 'hm_categories_description', 'Descripción')
+         	Field::make('textarea', 'hm_categories_desp', 'Descripción')
                 ->set_width(100)
-                ->set_help_text('Texto descriptivo mostrado debajo del título principal de la sección Categorías.'),
+                ->set_help_text('Segunda línea del título principal de la sección Categorías.'),
+
+            Field::make('complex', 'hm_categories_cards', 'Tarjetas de categorías')
+			    ->set_layout('tabbed-horizontal')
+			    ->add_fields([
+			        Field::make('image', 'icon', 'Ícono del título')
+			            ->set_help_text('Ícono mostrado junto al título de la tarjeta.')
+			            ->set_width(50),
+
+			        Field::make('rich_text', 'title', 'Título')
+			            ->set_help_text('Título principal de la tarjeta.')
+			            ->set_width(50),
+
+			        Field::make('image', 'model_image', 'Imagen del modelo')
+			            ->set_help_text('Imagen principal del modelo mostrada en la tarjeta.')
+			            ->set_width(100),
+			    ]),
 
         ])
 
@@ -114,7 +129,6 @@ function cf_home_fields() {
 
 			        Field::make('image', 'icon', 'Ícono')
 			            ->set_width(30)
-			            ->set_value_type('url')
 			            ->set_help_text('Ícono mostrado junto al texto.'),
 
 			        Field::make('text', 'title_1', 'Texto - Línea 1')

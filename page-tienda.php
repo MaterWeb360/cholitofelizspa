@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 <?php
 // Banner
-  $ti_hero_title_1     = carbon_get_post_meta(get_the_ID(), 'ti_hero_title_1');
-  $ti_hero_title_2     = carbon_get_post_meta(get_the_ID(), 'ti_hero_title_2');
-  $ti_hero_description = carbon_get_post_meta(get_the_ID(), 'ti_hero_description');
-  $ti_hero_main_image  = carbon_get_post_meta(get_the_ID(), 'ti_hero_main_image');
+  $ti_hero_title_1     = carbon_get_post_meta(get_the_ID(), 'og_hero_title_1');
+  $ti_hero_title_2     = carbon_get_post_meta(get_the_ID(), 'og_hero_title_2');
+  $ti_hero_description = carbon_get_post_meta(get_the_ID(), 'og_hero_description');
+  $ti_hero_main_image  = carbon_get_post_meta(get_the_ID(), 'og_hero_main_image');
 ?>
 
 <section class="seccion">
@@ -201,113 +201,5 @@
   </div>
   <div class="secccion-bg"><img  alt="" src="<?php echo get_template_directory_uri(); ?>/images/Tienda-1.jpg" loading="lazy" class="seccion-slider_fondo"></div>
 </section>
-<section class="seccion">
-  <div class="padding-seccion">
-    <div class="container-seccion">
-      <div class="wrp-seccion is-center">
-        <div class="title-seccion"><img src="<?php echo get_template_directory_uri(); ?>/images/Group-86.png" loading="lazy" alt="">
-          <h1 class="subtitle-seccion"><span>Visitanos en</span><br><span class="subtitle-down-seccion">nuestras tiendas</span></h1><img src="<?php echo get_template_directory_uri(); ?>/images/Group-85.png" loading="lazy" alt="">
-        </div>
-        <p class="titulo_desp">Encuentra la sede más cercana y ven por <br>todo lo que tu mascota necesita.</p>
-        <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="sedes_tab w-tabs">
-          <div class="sedes_tab-main w-tab-menu">
-            <a data-w-tab="Tab 1" class="sedes_tab-item w-inline-block w-tab-link w--current"><img src="<?php echo get_template_directory_uri(); ?>/images/pata-2.png" loading="lazy" alt="" class="sedes_tab-icon">
-              <div>SEDE ROSASPATA</div>
-            </a>
-            <a data-w-tab="Tab 2" class="sedes_tab-item w-inline-block w-tab-link"><img src="<?php echo get_template_directory_uri(); ?>/images/pata-2.png" loading="lazy" alt="" class="sedes_tab-icon">
-              <div>SEDE LA CULTURA</div>
-            </a>
-          </div>
-          <div class="sedes_tab-content w-tab-content">
-            <div data-w-tab="Tab 1" class="sedes_tab-pane w-tab-pane w--tab-active">
-              <div class="sedes_tab-box">
-                <div class="sedes_code w-embed w-iframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.2796869783238!2d-71.96924292486767!3d-13.518419886849475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd753615a08d9%3A0xf52feaef1184374a!2sCholito%20feliz%20pet%20shop%20spa!5e0!3m2!1ses!2spe!4v1778276792244!5m2!1ses!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                <div class="sedes_tab-foto"><img src="<?php echo get_template_directory_uri(); ?>/images/ChatGPT-Image-8-may-2026-04_56_11-p.m-1.png" loading="lazy"  alt="" class="sedes_tab-imagen">
-                  <div class="sedes_tab-msg">
-                    <div class="text-size-medium">Referencia:</div>
-                    <div>Nuestra tienda esta ubicada al lado del mercado, en la calle tal.</div>
-                  </div>
-                </div>
-                <div class="sedes_tab-infosede">
-                  <div class="sedes_tab-subtitulo">
-                    <div class="etiqueta-orange">
-                      <div>Sede</div>
-                    </div>
-                    <div class="heading-h2">Rosaspata</div>
-                  </div><img src="<?php echo get_template_directory_uri(); ?>/images/Group-76.png" loading="lazy" alt="" class="sede-linea">
-                  <div class="sedes_tab-list">
-                    <a href="#" class="sedes_tab-listitem w-inline-block"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-125.png" loading="lazy" alt="" class="sedes_tab-icono">
-                      <div class="sedes_tab-txt">
-                        <div class="sedes_tab-titulo">Dirección</div>
-                        <div>Av. Reducto 1233, rosaspata mercado.</div>
-                      </div>
-                    </a>
-                    <div class="sedes_tab-listitem"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-126.png" loading="lazy" alt="" class="sedes_tab-icono">
-                      <div class="sedes_tab-txt">
-                        <div class="sedes_tab-titulo">Teléfono</div>
-                        <div>+51 951 951 951</div>
-                      </div>
-                    </div>
-                    <div id="w-node-_729956ae-6e0c-40c7-fad7-4e1dd5621736-51f1a426" class="sedes_tab-listitem"><img src="<?php echo get_template_directory_uri(); ?>/images/Frame-125.png" loading="lazy" alt="" class="sedes_tab-icono">
-                      <div class="sedes_tab-txt">
-                        <div class="sedes_tab-titulo">Horario de atención</div>
-                        <div>Lunes a Domingo 9:00 a.m. - 9:00 p.m.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <a href="#" class="button-icon is-orange is-full w-inline-block"><img src="<?php echo get_template_directory_uri(); ?>/images/telegrama-1.svg" loading="lazy" alt="" class="button-icon-medium">
-                    <div><strong>CÓMO LLEGAR</strong></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div data-w-tab="Tab 2" class="sedes_tab-pane w-tab-pane">
-              <div class="sedes_tab-box">
-                <div class="sedes_code w-embed w-iframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.2796869783238!2d-71.96924292486767!3d-13.518419886849475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd753615a08d9%3A0xf52feaef1184374a!2sCholito%20feliz%20pet%20shop%20spa!5e0!3m2!1ses!2spe!4v1778276792244!5m2!1ses!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                <div class="sedes_tab-foto"><img sizes="100vw"  alt="" src="<?php echo get_template_directory_uri(); ?>/images/ChatGPT-Image-8-may-2026-04_56_11-p.m-1.png" loading="lazy" class="sedes_tab-imagen">
-                  <div class="sedes_tab-msg">
-                    <div class="text-size-medium">Referencia:</div>
-                    <div>Nuestra tienda esta ubicada al lado del mercado, en la calle tal.</div>
-                  </div>
-                </div>
-                <div class="sedes_tab-infosede">
-                  <div class="sedes_tab-subtitulo">
-                    <div class="etiqueta-orange">
-                      <div>Sede</div>
-                    </div>
-                    <div class="heading-h2">La Cultura</div>
-                  </div><img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/Group-76.png" alt="">
-                  <div class="sedes_tab-list">
-                    <a href="#" class="sedes_tab-listitem w-inline-block"><img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/Frame-125.png" alt="" class="sedes_tab-icono">
-                      <div class="sedes_tab-txt">
-                        <div class="sedes_tab-titulo">Dirección</div>
-                        <div>Av. Reducto 1233, rosaspata mercado.</div>
-                      </div>
-                    </a>
-                    <div class="sedes_tab-listitem"><img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/Frame-126.png" alt="" class="sedes_tab-icono">
-                      <div class="sedes_tab-txt">
-                        <div class="sedes_tab-titulo">Teléfono</div>
-                        <div>+51 951 951 951</div>
-                      </div>
-                    </div>
-                    <div class="sedes_tab-listitem"><img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/Frame-125.png" alt="" class="sedes_tab-icono">
-                      <div class="sedes_tab-txt">
-                        <div class="sedes_tab-titulo">Horario de atención</div>
-                        <div>Lunes a Domingo 9:00 a.m. - 9:00 p.m.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <a href="#" class="button-icon is-orange is-full w-inline-block"><img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/telegrama-1.svg" alt="" class="button-icon-medium">
-                    <div><strong>CÓMO LLEGAR</strong></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="secccion-bg"><img alt="" src="<?php echo get_template_directory_uri(); ?>/images/fondo-sedes-1.jpg" loading="lazy" class="seccion-slider_fondo"></div>
-</section>
+<?php get_template_part('parts/sedes'); ?>
 <?php get_footer(); ?>
