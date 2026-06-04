@@ -40,45 +40,160 @@
   $menu_logo = carbon_get_theme_option('gl_menu_logo');
   $trust_items = carbon_get_theme_option('gl_menu_trust_items');
   $menu_items = carbon_get_theme_option('gl_menu_items');
-  ?>
-  <div class="page-wrapper">
-    <div data-animation="over-left" data-collapse="medium" data-duration="350" data-easing="ease-in-out-back" data-easing2="ease-in-out-back" data-doc-height="1" role="banner" class="menu w-nav">
-      <div class="container-seccion">
-        <div class="menu_wrp">
-          <a href="/" aria-current="page" class="menu_linklogo w-nav-brand w--current">
-            <?php if ($menu_logo): ?>
-              <img loading="lazy" src="<?php echo wp_get_attachment_image_url($menu_logo, 'full'); ?>" alt="Logo" class="menu_logo">
-          <?php else: ?>
-              <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/logo-cholito-feliz.svg" alt="Logo" class="menu_logo">
-          <?php endif; ?>
-          </a>
-          <div class="menu_navegacion">
-            <nav role="navigation" class="menu_botonera w-nav-menu">
-              <div class="menu_movimiento">
-                <div class="menu_btnss">
-                    
-                    <?php if (!empty($menu_items)): ?>
-                        <?php foreach ($menu_items as $item): 
-                            $icon = wp_get_attachment_image_url($item['icon'], 'thumbnail');
-                            $title = $item['title'];
-                            $menu_type = $item['menu_type'];
-                        ?>
+?>
+<div class="page-wrapper">
+<div data-animation="over-left" data-collapse="medium" data-duration="350" data-easing="ease-in-out-back" data-easing2="ease-in-out-back" data-doc-height="1" role="banner" class="menu w-nav">
+  <div class="container-seccion">
+    <div class="menu_wrp">
+      <a href="/" aria-current="page" class="menu_linklogo w-nav-brand w--current">
+        <?php if ($menu_logo): ?>
+          <img loading="lazy" src="<?php echo wp_get_attachment_image_url($menu_logo, 'full'); ?>" alt="Logo" class="menu_logo">
+      <?php else: ?>
+          <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/logo-cholito-feliz.svg" alt="Logo" class="menu_logo">
+      <?php endif; ?>
+      </a>
+      <div class="menu_navegacion">
+        <nav role="navigation" class="menu_botonera w-nav-menu">
+          <div class="menu_movimiento">
+            <div class="menu_btnss">
+                
+                <?php if (!empty($menu_items)): ?>
+                    <?php foreach ($menu_items as $item): 
+                        $icon = wp_get_attachment_image_url($item['icon'], 'thumbnail');
+                        $title = $item['title'];
+                        $menu_type = $item['menu_type'];
+                    ?>
+                        
+                        <?php if ($menu_type == 'simple'): ?>
+                            <!-- LINK SIMPLE -->
+                            <a href="<?php echo esc_url($item['page_linky']); ?>" class="menu_linky w-inline-block">
+                                <?php if ($icon): ?>
+                                    <img loading="lazy" src="<?php echo $icon; ?>" alt="" class="menu_iconlinky">
+                                <?php endif; ?>
+                                <div class="menu_textly"><?php echo esc_html($title); ?></div>
+                            </a>
                             
-                            <?php if ($menu_type == 'simple'): ?>
-                                <!-- LINK SIMPLE -->
-                                <a href="<?php echo esc_url($item['page_linky']); ?>" class="menu_linky w-inline-block">
-                                    <?php if ($icon): ?>
-                                        <img loading="lazy" src="<?php echo $icon; ?>" alt="" class="menu_iconlinky">
-                                    <?php endif; ?>
-                                    <div class="menu_textly"><?php echo esc_html($title); ?></div>
-                                </a>
-                                
-                            <?php elseif ($menu_type == 'institutional'): 
-                            $institutional_columns = $item['institutional_columns'];
-                            $social_links = $item['social_links'];
-                            $character_image = wp_get_attachment_image_url($item['character_image'], 'full');
-                        ?>
-                            <!-- DROPDOWN INSTITUCIONAL -->
+                        <?php elseif ($menu_type == 'institutional'): 
+                        $institutional_columns = $item['institutional_columns'];
+                        $social_links = $item['social_links'];
+                        $character_image = wp_get_attachment_image_url($item['character_image'], 'full');
+                    ?>
+                        <!-- DROPDOWN INSTITUCIONAL -->
+                        <div data-delay="0" data-hover="false" class="menu_drop w-dropdown">
+                            <div class="menu_linky is-drop w-dropdown-toggle">
+                                <?php if ($icon): ?>
+                                    <img loading="lazy" src="<?php echo $icon; ?>" alt="" class="menu_iconlinky">
+                                <?php endif; ?>
+                                <div class="menu_textly"><?php echo esc_html($title); ?></div>
+                                <div class="icon w-icon-dropdown-toggle"></div>
+                            </div>
+                            <nav class="drop-control w-dropdown-list">
+                                <div class="drop_move">
+                                    <div class="drop-capa">
+                                        <div class="drop_bx-close">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/cerrar-sesion.png" loading="lazy" alt="" class="drop_close">
+                                        </div>
+                                        <div class="grilla-town">
+                                            <div class="drop-content">
+                                                <div class="drop-navegacion">
+                                                    <div class="drop-listas">
+                                                        
+                                                        <!-- COLUMNAS INSTITUCIONALES -->
+                                                        <?php if (!empty($institutional_columns)): ?>
+                                                            <?php foreach ($institutional_columns as $col): 
+                                                                $col_icon = wp_get_attachment_image_url($col['icon'], 'thumbnail');
+                                                                $col_title = $col['title'];
+                                                                $links = $col['links'];
+                                                            ?>
+                                                                <div class="drop-list">
+                                                                    <div class="drop-title">
+                                                                        <?php if ($col_icon): ?>
+                                                                            <div class="drop-icon">
+                                                                                <img loading="lazy" src="<?php echo $col_icon; ?>" alt="" class="drop-title_icon is-medium">
+                                                                            </div>
+                                                                        <?php endif; ?>
+                                                                        <div class="drop-title-txt">
+                                                                            <div class="title-etiqueta-drop"><?php echo esc_html($col_title); ?></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <?php if (!empty($links)): ?>
+                                                                        <?php foreach ($links as $link): ?>
+                                                                            <a href="<?php echo esc_url($link['url']); ?>" class="drop-list-item w-inline-block">
+                                                                                <div><?php echo esc_html($link['label']); ?></div>
+                                                                            </a>
+                                                                        <?php endforeach; ?>
+                                                                    <?php endif; ?>
+                                                                </div>
+                                                            <?php endforeach; ?>
+                                                        <?php endif; ?>
+                                                        
+                                                        <!-- REDES SOCIALES -->
+                                                        <?php if (!empty($social_links)): ?>
+                                                            <div class="drop-list">
+                                                                <div class="drop-title">
+                                                                    <div class="drop-icon">
+                                                                        <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/redes-sociales.png" alt="" class="drop-title_icon is-medium">
+                                                                    </div>
+                                                                    <div class="drop-title-txt">
+                                                                        <div class="title-etiqueta-drop">Redes sociales</div>
+                                                                    </div>
+                                                                </div>
+                                                                <?php foreach ($social_links as $social): 
+                                                                    $social_icon = wp_get_attachment_image_url($social['icon'], 'thumbnail');
+                                                                ?>
+                                                                    <a href="<?php echo esc_url($social['url']); ?>" class="drop-list-item is-red w-inline-block" target="_blank">
+                                                                        <?php if ($social_icon): ?>
+                                                                            <img loading="lazy" src="<?php echo $social_icon; ?>" alt="" class="drop_menu-icon">
+                                                                        <?php endif; ?>
+                                                                        <div><?php echo esc_html($social['label']); ?></div>
+                                                                    </a>
+                                                                <?php endforeach; ?>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                        
+                                                    </div>
+                                                    
+                                                    <!-- BENEFICIOS TRUST -->
+                                                    <div class="transp_confianza">
+                                                        <?php if (!empty($trust_items)): ?>
+                                                            <?php $trust_count = count($trust_items); $i = 0; ?>
+                                                            <?php foreach ($trust_items as $trust): 
+                                                                $trust_icon = wp_get_attachment_image_url($trust['icon'], 'thumbnail');
+                                                                $i++;
+                                                            ?>
+                                                                <div class="transp_confianza-bx">
+                                                                    <?php if ($trust_icon): ?>
+                                                                        <img loading="lazy" src="<?php echo $trust_icon; ?>" alt="" class="transp_confianza-icon">
+                                                                    <?php endif; ?>
+                                                                    <div><?php echo esc_html($trust['text']); ?></div>
+                                                                </div>
+                                                                <?php if ($i < $trust_count): ?>
+                                                                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/line-orange.svg" alt="" class="transp_confianza-line">
+                                                                <?php endif; ?>
+                                                            <?php endforeach; ?>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- IMAGEN LATERAL -->
+                                            <?php if ($character_image): ?>
+                                                <div class="drop-personaje">
+                                                    <img sizes="100vw" alt="" src="<?php echo $character_image; ?>" loading="lazy" class="drop-personaje_image">
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="transp_confianza is-hide"></div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                                                
+                <?php elseif ($menu_type == 'categories_woo'): 
+                    $category_columns = $item['category_columns'];
+                    $character_image = wp_get_attachment_image_url($item['character_image'], 'full');
+                ?>
+                            <!-- DROPDOWN WOOCOMMERCE -->
                             <div data-delay="0" data-hover="false" class="menu_drop w-dropdown">
                                 <div class="menu_linky is-drop w-dropdown-toggle">
                                     <?php if ($icon): ?>
@@ -98,217 +213,102 @@
                                                     <div class="drop-navegacion">
                                                         <div class="drop-listas">
                                                             
-                                                            <!-- COLUMNAS INSTITUCIONALES -->
-                                                            <?php if (!empty($institutional_columns)): ?>
-                                                                <?php foreach ($institutional_columns as $col): 
-                                                                    $col_icon = wp_get_attachment_image_url($col['icon'], 'thumbnail');
-                                                                    $col_title = $col['title'];
-                                                                    $links = $col['links'];
+                                                            <?php if (!empty($category_columns)): ?>
+                                                                <?php foreach ($category_columns as $cat_col):
+                                                                    $cat_icon = wp_get_attachment_image_url($cat_col['icon'], 'thumbnail');
+                                                                    $cat_title = $cat_col['title'];
+                                                                    $cat_subtitle = $cat_col['subtitle'];
+                                                                    $button_text = $cat_col['button_text'];
+                                                                    $button_link = $cat_col['button_link'];
+                                                                    $custom_links = $cat_col['custom_links'];
                                                                 ?>
                                                                     <div class="drop-list">
                                                                         <div class="drop-title">
-                                                                            <?php if ($col_icon): ?>
+                                                                            <?php if ($cat_icon): ?>
                                                                                 <div class="drop-icon">
-                                                                                    <img loading="lazy" src="<?php echo $col_icon; ?>" alt="" class="drop-title_icon is-medium">
+                                                                                    <img loading="lazy" src="<?php echo $cat_icon; ?>" alt="" class="drop-title_icon">
                                                                                 </div>
                                                                             <?php endif; ?>
                                                                             <div class="drop-title-txt">
-                                                                                <div class="title-etiqueta-drop"><?php echo esc_html($col_title); ?></div>
+                                                                                <div class="title-etiqueta-drop"><?php echo esc_html($cat_title); ?></div>
+                                                                                <?php if ($cat_subtitle): ?>
+                                                                                    <div class="text-etiqueta-drop"><?php echo esc_html($cat_subtitle); ?></div>
+                                                                                <?php endif; ?>
                                                                             </div>
                                                                         </div>
-                                                                        <?php if (!empty($links)): ?>
-                                                                            <?php foreach ($links as $link): ?>
-                                                                                <a href="<?php echo esc_url($link['url']); ?>" class="drop-list-item w-inline-block">
-                                                                                    <div><?php echo esc_html($link['label']); ?></div>
+                                                                        
+                                                                        <?php if (!empty($custom_links)): ?>
+                                                                            <?php foreach ($custom_links as $link): ?>
+                                                                                <a href="<?php echo esc_url($link['link_url']); ?>" class="drop-list-item w-inline-block">
+                                                                                    <div><?php echo esc_html($link['link_text']); ?></div>
                                                                                 </a>
                                                                             <?php endforeach; ?>
                                                                         <?php endif; ?>
-                                                                    </div>
-                                                                <?php endforeach; ?>
-                                                            <?php endif; ?>
-                                                            
-                                                            <!-- REDES SOCIALES -->
-                                                            <?php if (!empty($social_links)): ?>
-                                                                <div class="drop-list">
-                                                                    <div class="drop-title">
-                                                                        <div class="drop-icon">
-                                                                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/redes-sociales.png" alt="" class="drop-title_icon is-medium">
-                                                                        </div>
-                                                                        <div class="drop-title-txt">
-                                                                            <div class="title-etiqueta-drop">Redes sociales</div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <?php foreach ($social_links as $social): 
-                                                                        $social_icon = wp_get_attachment_image_url($social['icon'], 'thumbnail');
-                                                                    ?>
-                                                                        <a href="<?php echo esc_url($social['url']); ?>" class="drop-list-item is-red w-inline-block" target="_blank">
-                                                                            <?php if ($social_icon): ?>
-                                                                                <img loading="lazy" src="<?php echo $social_icon; ?>" alt="" class="drop_menu-icon">
-                                                                            <?php endif; ?>
-                                                                            <div><?php echo esc_html($social['label']); ?></div>
-                                                                        </a>
-                                                                    <?php endforeach; ?>
-                                                                </div>
-                                                            <?php endif; ?>
-                                                            
-                                                        </div>
-                                                        
-                                                        <!-- BENEFICIOS TRUST -->
-                                                        <div class="transp_confianza">
-                                                            <?php if (!empty($trust_items)): ?>
-                                                                <?php $trust_count = count($trust_items); $i = 0; ?>
-                                                                <?php foreach ($trust_items as $trust): 
-                                                                    $trust_icon = wp_get_attachment_image_url($trust['icon'], 'thumbnail');
-                                                                    $i++;
-                                                                ?>
-                                                                    <div class="transp_confianza-bx">
-                                                                        <?php if ($trust_icon): ?>
-                                                                            <img loading="lazy" src="<?php echo $trust_icon; ?>" alt="" class="transp_confianza-icon">
+                                                                        
+                                                                        <?php if (!empty($button_text) && !empty($button_link)): ?>
+                                                                            <a href="<?php echo esc_url($button_link); ?>" class="button-icon is-outline w-inline-block">
+                                                                                <div><?php echo esc_html($button_text); ?></div>
+                                                                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/flecha-izquierda-1.svg" alt="">
+                                                                            </a>
                                                                         <?php endif; ?>
-                                                                        <div><?php echo esc_html($trust['text']); ?></div>
                                                                     </div>
-                                                                    <?php if ($i < $trust_count): ?>
-                                                                        <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/line-orange.svg" alt="" class="transp_confianza-line">
-                                                                    <?php endif; ?>
                                                                 <?php endforeach; ?>
                                                             <?php endif; ?>
+                                                            
                                                         </div>
-                                                    </div>
-                                                </div>
                                                 
-                                                <!-- IMAGEN LATERAL -->
-                                                <?php if ($character_image): ?>
-                                                    <div class="drop-personaje">
-                                                        <img sizes="100vw" alt="" src="<?php echo $character_image; ?>" loading="lazy" class="drop-personaje_image">
-                                                    </div>
-                                                <?php endif; ?>
+                                                <div class="transp_confianza">
+                                                    <?php if (!empty($trust_items)): ?>
+                                                        <?php $trust_count = count($trust_items); $i = 0; ?>
+                                                        <?php foreach ($trust_items as $trust): 
+                                                            $trust_icon = wp_get_attachment_image_url($trust['icon'], 'thumbnail');
+                                                            $i++;
+                                                        ?>
+                                                            <div class="transp_confianza-bx">
+                                                                <?php if ($trust_icon): ?>
+                                                                    <img loading="lazy" src="<?php echo $trust_icon; ?>" alt="" class="transp_confianza-icon">
+                                                                <?php endif; ?>
+                                                                <div><?php echo esc_html($trust['text']); ?></div>
+                                                            </div>
+                                                            <?php if ($i < $trust_count): ?>
+                                                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/line-orange.svg" alt="" class="transp_confianza-line">
+                                                            <?php endif; ?>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
+                                                </div>
                                             </div>
-                                            <div class="transp_confianza is-hide"></div>
                                         </div>
-                                    </div>
-                                </nav>
-                            </div>
-                                
-<?php elseif ($menu_type == 'categories_woo'): 
-    $category_columns = $item['category_columns'];
-    $character_image = wp_get_attachment_image_url($item['character_image'], 'full');
-?>
-    <!-- DROPDOWN WOOCOMMERCE -->
-    <div data-delay="0" data-hover="false" class="menu_drop w-dropdown">
-        <div class="menu_linky is-drop w-dropdown-toggle">
-            <?php if ($icon): ?>
-                <img loading="lazy" src="<?php echo $icon; ?>" alt="" class="menu_iconlinky">
-            <?php endif; ?>
-            <div class="menu_textly"><?php echo esc_html($title); ?></div>
-            <div class="icon w-icon-dropdown-toggle"></div>
-        </div>
-        <nav class="drop-control w-dropdown-list">
-            <div class="drop_move">
-                <div class="drop-capa">
-                    <div class="drop_bx-close">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/cerrar-sesion.png" loading="lazy" alt="" class="drop_close">
-                    </div>
-                    <div class="grilla-town">
-                        <div class="drop-content">
-                            <div class="drop-navegacion">
-<div class="drop-listas">
-    
-    <?php if (!empty($category_columns)): ?>
-        <?php foreach ($category_columns as $cat_col):
-            $cat_icon = wp_get_attachment_image_url($cat_col['icon'], 'thumbnail');
-            $cat_title = $cat_col['title'];
-            $cat_subtitle = $cat_col['subtitle'];
-            $button_text = $cat_col['button_text'];
-            $button_link = $cat_col['button_link'];
-            $custom_links = $cat_col['custom_links'];
-        ?>
-            <div class="drop-list">
-                <div class="drop-title">
-                    <?php if ($cat_icon): ?>
-                        <div class="drop-icon">
-                            <img loading="lazy" src="<?php echo $cat_icon; ?>" alt="" class="drop-title_icon">
-                        </div>
-                    <?php endif; ?>
-                    <div class="drop-title-txt">
-                        <div class="title-etiqueta-drop"><?php echo esc_html($cat_title); ?></div>
-                        <?php if ($cat_subtitle): ?>
-                            <div class="text-etiqueta-drop"><?php echo esc_html($cat_subtitle); ?></div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                
-                <?php if (!empty($custom_links)): ?>
-                    <?php foreach ($custom_links as $link): ?>
-                        <a href="<?php echo esc_url($link['link_url']); ?>" class="drop-list-item w-inline-block">
-                            <div><?php echo esc_html($link['link_text']); ?></div>
-                        </a>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-                
-                <?php if (!empty($button_text) && !empty($button_link)): ?>
-                    <a href="<?php echo esc_url($button_link); ?>" class="button-icon is-outline w-inline-block">
-                        <div><?php echo esc_html($button_text); ?></div>
-                        <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/flecha-izquierda-1.svg" alt="">
-                    </a>
-                <?php endif; ?>
-            </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
-    
-</div>
-                                
-                                <div class="transp_confianza">
-                                    <?php if (!empty($trust_items)): ?>
-                                        <?php $trust_count = count($trust_items); $i = 0; ?>
-                                        <?php foreach ($trust_items as $trust): 
-                                            $trust_icon = wp_get_attachment_image_url($trust['icon'], 'thumbnail');
-                                            $i++;
-                                        ?>
-                                            <div class="transp_confianza-bx">
-                                                <?php if ($trust_icon): ?>
-                                                    <img loading="lazy" src="<?php echo $trust_icon; ?>" alt="" class="transp_confianza-icon">
-                                                <?php endif; ?>
-                                                <div><?php echo esc_html($trust['text']); ?></div>
+                                        
+                                        <?php if ($character_image): ?>
+                                            <div class="drop-personaje">
+                                                <img sizes="100vw" alt="" src="<?php echo $character_image; ?>" loading="lazy" class="drop-personaje_image">
                                             </div>
-                                            <?php if ($i < $trust_count): ?>
-                                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/line-orange.svg" alt="" class="transp_confianza-line">
-                                            <?php endif; ?>
-                                        <?php endforeach; ?>
-                                    <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="transp_confianza is-hide"></div>
+                                    </div>
                                 </div>
-                            </div>
+                            </nav>
                         </div>
                         
-                        <?php if ($character_image): ?>
-                            <div class="drop-personaje">
-                                <img sizes="100vw" alt="" src="<?php echo $character_image; ?>" loading="lazy" class="drop-personaje_image">
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                    <div class="transp_confianza is-hide"></div>
-                </div>
-            </div>
-        </nav>
-    </div>
-                                
-                            <?php endif; ?>
-                            
-                        <?php endforeach; ?>
                     <?php endif; ?>
                     
-                    <!-- CARRITO -->
-                    <div class="menu_carrito">
-                        <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/Frame-33.png" alt="" class="menu_iconcarrito">
-                        <div class="menu_carrito-txt">Ver carrito mi compar</div>
-                    </div>
-                    
+                <?php endforeach; ?>
+            <?php endif; ?>
+                
+                <!-- CARRITO -->
+                <div class="menu_carrito">
+                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/Frame-33.png" alt="" class="menu_iconcarrito">
+                    <div class="menu_carrito-txt">Ver carrito mi compar</div>
                 </div>
-              </div>
-            </nav>
+                
+            </div>
           </div>
-          <div class="menu_btn w-nav-button">
-            <div class="w-icon-nav-menu"></div>
-          </div>
-        </div>
+        </nav>
+      </div>
+      <div class="menu_btn w-nav-button">
+        <div class="w-icon-nav-menu"></div>
       </div>
     </div>
+  </div>
+</div>

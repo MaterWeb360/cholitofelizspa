@@ -2481,7 +2481,6 @@
   }
 }
 @media screen and (max-width: 991px) {
-
   .padding-seccion {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -3006,6 +3005,7 @@
 }
 
 @media screen and (max-width: 767px) {
+  
   .contacto_br{
     padding-top: 2rem;
     padding-bottom: 2rem;

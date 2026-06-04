@@ -1,12 +1,23 @@
 <?php get_header(); ?>
 
+<?php
+
+$product = wc_get_product(get_the_ID());
+
+$gallery_ids = $product->get_gallery_image_ids();
+
+$product_categories = get_the_terms(get_the_ID(), 'product_cat');
+
+$attributes = $product->get_attributes();
+
+?>
 
 <?php
 
 
 
 ?>
-    <section class="seccion">
+    <!--<section class="seccion">
       <div class="padding-seccion is-banner-internas">
         <div class="container-seccion">
           <div class="wrp-seccion _2col">
@@ -19,54 +30,75 @@
         </div>
       </div>
       <div class="secccion-bg"><img alt="" src="<?php echo get_template_directory_uri(); ?>/images/Banner-interna-1.jpg" loading="lazy" class="seccion-slider_fondo"></div>
-    </section>
+    </section>-->
 
-    <section class="seccion producto-single">
+    <section class="seccion producto-single text_ms">
 
         <div class="container-seccion">
 
             <div class="wrp-seccion producto-single_wrp">
 
                 <!-- GALERÍA -->
-                <div class="producto-single_galeria">
+                        <div class="producto-single_galeria">
 
-                    <div class="producto-single_thumbs">
+                            <div class="producto-single_thumbs">
 
-                        <div class="producto-single_thumb is-active">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
+
+                                <?php foreach ($gallery_ids as $gallery_id) : ?>
+
+                                    <div class="producto-single_thumb">
+
+                                        <?php
+                                        echo wp_get_attachment_image(
+                                            $gallery_id,
+                                            'thumbnail'
+                                        );
+                                        ?>
+
+                                    </div>
+
+                                <?php endforeach; ?>
+
+                            </div>
+
+                           <div class="producto-single_imagen">
+
+                                <?php
+
+                                $image_url = wp_get_attachment_image_url(
+                                    $product->get_image_id(),
+                                    'full'
+                                );
+
+                                if ($image_url) {
+
+                                    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr(get_the_title()) . '" class="img_stili">';
+
+                                }
+
+                                ?>
+                                <div class="zoom-lens"></div>
+                            </div>
+
                         </div>
-
-                        <div class="producto-single_thumb">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
-                        </div>
-
-                        <div class="producto-single_thumb">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
-                        </div>
-
-                        <div class="producto-single_thumb">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
-                        </div>
-
-                    </div>
-
-                    <div class="producto-single_imagen">
-
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/perro-producto.png" alt="">
-
-                    </div>
-
-                </div>
 
                 <!-- INFORMACIÓN -->
                 <div class="producto-single_info">
 
                     <div class="producto-single_categoria">
-                        Accesorios para mascotas
+
+                        <?php
+
+                        if (!empty($product_categories)) {
+                            echo esc_html($product_categories[0]->name);
+                        }
+
+                        ?>
+
                     </div>
 
                     <h1 class="producto-single_titulo">
-                        Arnés acolchado ajustable para perros
+                        <?php the_title(); ?>
                     </h1>
 
                     <div class="producto-single_rating">
@@ -82,63 +114,132 @@
                     </div>
 
                     <div class="producto-single_precio">
-                        S/ 89.90
+                        <?php echo wp_kses_post($product->get_price_html());?>
                     </div>
 
                     <div class="producto-single_descripcion">
-                        Arnés acolchado y transpirable para brindar máxima
-                        comodidad y seguridad durante cada paseo.
+                        <?php echo $product->get_short_description(); ?>
                     </div>
 
-                    <!-- COLORES -->
-                    <div class="producto-single_bloque">
+                    <?php if (!empty($attributes)) : ?>
 
-                        <div class="producto-single_label">
-                            Color
-                        </div>
+                        <?php
 
-                        <div class="producto-single_colores">
+                        $atributos_principales = [];
+                        $atributos_secundarios = [];
 
-                            <button class="producto-single_color is-active"></button>
+                        foreach ($attributes as $attribute) {
 
-                            <button class="producto-single_color"></button>
+                            $terms = wc_get_product_terms(
+                                get_the_ID(),
+                                $attribute->get_name(),
+                                array(
+                                    'fields' => 'all'
+                                )
+                            );
 
-                            <button class="producto-single_color"></button>
+                            $label = strtolower(
+                                wc_attribute_label($attribute->get_name())
+                            );
 
-                            <button class="producto-single_color"></button>
+                            $item = [
+                                'attribute' => $attribute,
+                                'terms' => $terms
+                            ];
 
-                        </div>
+                            if (
+                                ($label === 'peso' || $label === 'talla')
+                                && count($terms) > 1
+                            ) {
 
-                    </div>
+                                $atributos_principales[] = $item;
 
-                    <!-- TALLAS -->
-                    <div class="producto-single_bloque">
+                            } else {
 
-                        <div class="producto-single_label">
-                            Talla
-                        </div>
+                                $atributos_secundarios[] = $item;
 
-                        <div class="producto-single_variaciones">
+                            }
+                        }
 
-                            <button class="producto-single_var">
-                                S
-                            </button>
+                        ?>
 
-                            <button class="producto-single_var is-active">
-                                M
-                            </button>
+                        <?php if (!empty($atributos_principales)) : ?>
 
-                            <button class="producto-single_var">
-                                L
-                            </button>
+                            <div class="producto-single_atributos producto-single_atributos-principales">
 
-                            <button class="producto-single_var">
-                                XL
-                            </button>
+                                <?php foreach ($atributos_principales as $item) : ?>
 
-                        </div>
+                                    <div class="producto-single_bloque">
 
-                    </div>
+                                        <div class="producto-single_label">
+                                            <?php echo wc_attribute_label($item['attribute']->get_name()); ?>
+                                        </div>
+
+                                        <div class="producto-single_variaciones">
+
+                                            <?php foreach ($item['terms'] as $term) : ?>
+
+                                                <button
+                                                    type="button"
+                                                    class="producto-single_var"
+                                                    data-attribute="<?php echo esc_attr($item['attribute']->get_name()); ?>"
+                                                    data-value="<?php echo esc_attr($term->slug); ?>">
+
+                                                    <?php echo esc_html($term->name); ?>
+
+                                                </button>
+
+                                            <?php endforeach; ?>
+
+                                        </div>
+
+                                    </div>
+
+                                <?php endforeach; ?>
+
+                            </div>
+
+                        <?php endif; ?>
+
+                        <?php if (!empty($atributos_secundarios)) : ?>
+
+                            <div class="producto-single_atributos producto-single_atributos-secundarios">
+
+                                <?php foreach ($atributos_secundarios as $item) : ?>
+
+                                    <div class="producto-single_bloque">
+
+                                        <div class="producto-single_label">
+                                            <?php echo wc_attribute_label($item['attribute']->get_name()); ?>
+                                        </div>
+
+                                        <div class="producto-single_variaciones">
+
+                                            <?php foreach ($item['terms'] as $term) : ?>
+
+                                                <button
+                                                    type="button"
+                                                    class="producto-single_var"
+                                                    data-attribute="<?php echo esc_attr($item['attribute']->get_name()); ?>"
+                                                    data-value="<?php echo esc_attr($term->slug); ?>">
+
+                                                    <?php echo esc_html($term->name); ?>
+
+                                                </button>
+
+                                            <?php endforeach; ?>
+
+                                        </div>
+
+                                    </div>
+
+                                <?php endforeach; ?>
+
+                            </div>
+
+                        <?php endif; ?>
+
+                    <?php endif; ?>
 
                     <!-- CANTIDAD -->
                     <div class="producto-single_bloque">
@@ -175,23 +276,43 @@
                     <div class="producto-single_beneficios">
 
                         <div class="producto-single_beneficio">
-                            <div class="producto-single_beneficio-icono"></div>
+
+                            <div class="producto-single_beneficio-icono">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/envios-caja.png" class="producto_iconBenet" alt="Envíos">
+                            </div>
+
                             <span>Envíos a todo el Perú</span>
+
                         </div>
 
                         <div class="producto-single_beneficio">
-                            <div class="producto-single_beneficio-icono"></div>
+
+                            <div class="producto-single_beneficio-icono">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/seguridad.png" alt="Compra segura">
+                            </div>
+
                             <span>Compra segura</span>
+
                         </div>
 
                         <div class="producto-single_beneficio">
-                            <div class="producto-single_beneficio-icono"></div>
+
+                            <div class="producto-single_beneficio-icono">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/soporte-personalizado.png" alt="Atención personalizada">
+                            </div>
+
                             <span>Atención personalizada</span>
+
                         </div>
 
                         <div class="producto-single_beneficio">
-                            <div class="producto-single_beneficio-icono"></div>
+
+                            <div class="producto-single_beneficio-icono">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/garantia.png" alt="Productos seleccionados">
+                            </div>
+
                             <span>Productos seleccionados</span>
+
                         </div>
 
                     </div>
@@ -204,73 +325,6 @@
 
     </section>
 
-
-<section class="seccion producto-detalles">
-
-    <div class="container-seccion">
-
-        <div class="wrp-seccion producto-detalles_wrp">
-
-            <div class="producto-detalles_descripcion">
-
-                <h2 class="producto-detalles_titulo">
-                    Descripción
-                </h2>
-
-                <div class="producto-detalles_texto">
-
-                    <p>
-                        Texto descriptivo del producto...
-                    </p>
-
-                    <ul>
-                        <li>Característica 1</li>
-                        <li>Característica 2</li>
-                        <li>Característica 3</li>
-                        <li>Característica 4</li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-            <div class="producto-detalles_caracteristicas">
-
-                <h2 class="producto-detalles_titulo">
-                    Características
-                </h2>
-
-                <div class="producto-detalles_tabla">
-
-                    <div class="producto-detalles_fila">
-                        <span>Material</span>
-                        <span>Poliéster</span>
-                    </div>
-
-                    <div class="producto-detalles_fila">
-                        <span>Color</span>
-                        <span>Verde Salvia</span>
-                    </div>
-
-                    <div class="producto-detalles_fila">
-                        <span>Talla</span>
-                        <span>M</span>
-                    </div>
-
-                    <div class="producto-detalles_fila">
-                        <span>Incluye</span>
-                        <span>Arnés ajustable</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 <?php get_footer(); ?>

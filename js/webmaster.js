@@ -101,3 +101,58 @@ document.addEventListener("DOMContentLoaded", () => {
     validateForm();
 
 });
+
+//lupa producto
+document.addEventListener('DOMContentLoaded', () => {
+
+    const container = document.querySelector('.producto-single_imagen');
+
+    if(!container) return;
+
+    const img = container.querySelector('img');
+    const lens = container.querySelector('.zoom-lens');
+
+    if(!img || !lens) return;
+
+    const zoom = 2;
+
+    container.addEventListener('mouseenter', () => {
+
+        lens.style.opacity = '1';
+
+        lens.style.backgroundImage = `url(${img.src})`;
+
+        lens.style.backgroundSize =
+            `${img.offsetWidth * zoom}px ${img.offsetHeight * zoom}px`;
+
+    });
+
+    container.addEventListener('mouseleave', () => {
+
+        lens.style.opacity = '0';
+
+    });
+
+    container.addEventListener('mousemove', (e) => {
+
+        const rect = container.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const lensSize = lens.offsetWidth;
+
+        let lensX = x - lensSize / 2;
+        let lensY = y - lensSize / 2;
+
+        lens.style.left = lensX + 'px';
+        lens.style.top = lensY + 'px';
+
+        const bgX = -(x * zoom - lensSize / 2);
+        const bgY = -(y * zoom - lensSize / 2);
+
+        lens.style.backgroundPosition = `${bgX}px ${bgY}px`;
+
+    });
+
+});
