@@ -156,3 +156,117 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+//menu
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuBtn = document.querySelector(".menu_btn");
+    const menu = document.querySelector(".menu_botonera");
+    const menuMovimiento = document.querySelector(".menu_movimiento");
+    const menuContenido = document.querySelector(".menu_btnss");
+
+    if(menuBtn && menu){
+
+        menuBtn.addEventListener("click", () => {
+
+            menu.classList.toggle("is-open");
+
+            if(menu.classList.contains("is-open")){
+                document.body.classList.add("menu-open");
+            }else{
+                document.body.classList.remove("menu-open");
+            }
+
+        });
+
+        menuMovimiento.addEventListener("click", () => {
+
+            menu.classList.remove("is-open");
+            document.body.classList.remove("menu-open");
+
+        });
+
+        if(menuContenido){
+
+            menuContenido.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+
+        }
+
+    }
+
+});
+
+
+//DROPS DEL MENU
+const dropdowns = document.querySelectorAll(".menu_drop");
+
+dropdowns.forEach(dropdown => {
+
+    const trigger = dropdown.querySelector(".menu_linky.is-drop");
+
+    if(!trigger) return;
+
+    trigger.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        const abierto = dropdown.classList.contains("is-open");
+
+        dropdowns.forEach(item => {
+            item.classList.remove("is-open");
+        });
+
+        if(!abierto){
+            dropdown.classList.add("is-open");
+        }
+
+    });
+
+});
+
+//MODAL DROP OPCION
+const dropMoves = document.querySelectorAll(".drop_move");
+
+dropMoves.forEach(move => {
+
+    move.addEventListener("click", () => {
+
+        const dropdown = move.closest(".menu_drop");
+
+        if(dropdown){
+            dropdown.classList.remove("is-open");
+        }
+
+    });
+
+});
+
+const dropCapas = document.querySelectorAll(".drop-capa");
+
+dropCapas.forEach(capa => {
+
+    capa.addEventListener("click", (e) => {
+        e.stopPropagation();
+    });
+
+});
+
+const dropCloses = document.querySelectorAll(".drop_bx-close");
+
+dropCloses.forEach(btn => {
+
+    btn.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        const dropdown = btn.closest(".menu_drop");
+
+        if(dropdown){
+            dropdown.classList.remove("is-open");
+        }
+
+    });
+
+});

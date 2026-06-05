@@ -1,8 +1,29 @@
 .producto-single.text_ms{
     padding-top: 8rem !important;
 }
-
-
+.menu_btn{
+    display: none;
+}
+.drop-control{
+    display:none;
+    position:absolute;
+    left:0;
+    top:100%;
+    max-width: 1920px;
+}
+.aroowte{
+    width: 15px;
+    margin-bottom: 3px;
+}
+.menu_drop.is-open .drop-control{
+    display:block;
+}
+.icon_mainWP{
+    width: 18px;
+}
+body.menu-open{
+    overflow:hidden;
+}
 .producto_iconBenet{
     width: 100%;
     height: 100%;
@@ -576,8 +597,16 @@ ins{
     color: #666;
 }
 @media screen and (max-width: 991px) {
+.menu_btn{
+    display: flex;
+}
+ .menu_botonera{
+        display:none;
+    }
 
- 
+    .menu_botonera.is-open{
+        display:block;
+    }
 
     /* ==========================================================
        PRODUCTO

@@ -42,10 +42,10 @@
   $menu_items = carbon_get_theme_option('gl_menu_items');
 ?>
 <div class="page-wrapper">
-<div data-animation="over-left" data-collapse="medium" data-duration="350" data-easing="ease-in-out-back" data-easing2="ease-in-out-back" data-doc-height="1" role="banner" class="menu w-nav">
+<div class="menu">
   <div class="container-seccion">
     <div class="menu_wrp">
-      <a href="/" aria-current="page" class="menu_linklogo w-nav-brand w--current">
+      <a href="/" class="menu_linklogo">
         <?php if ($menu_logo): ?>
           <img loading="lazy" src="<?php echo wp_get_attachment_image_url($menu_logo, 'full'); ?>" alt="Logo" class="menu_logo">
       <?php else: ?>
@@ -53,7 +53,7 @@
       <?php endif; ?>
       </a>
       <div class="menu_navegacion">
-        <nav role="navigation" class="menu_botonera w-nav-menu">
+        <nav class="menu_botonera">
           <div class="menu_movimiento">
             <div class="menu_btnss">
                 
@@ -66,7 +66,7 @@
                         
                         <?php if ($menu_type == 'simple'): ?>
                             <!-- LINK SIMPLE -->
-                            <a href="<?php echo esc_url($item['page_linky']); ?>" class="menu_linky w-inline-block">
+                            <a href="<?php echo esc_url($item['page_linky']); ?>" class="menu_linky">
                                 <?php if ($icon): ?>
                                     <img loading="lazy" src="<?php echo $icon; ?>" alt="" class="menu_iconlinky">
                                 <?php endif; ?>
@@ -79,15 +79,15 @@
                         $character_image = wp_get_attachment_image_url($item['character_image'], 'full');
                     ?>
                         <!-- DROPDOWN INSTITUCIONAL -->
-                        <div data-delay="0" data-hover="false" class="menu_drop w-dropdown">
-                            <div class="menu_linky is-drop w-dropdown-toggle">
+                        <div class="menu_drop">
+                            <div class="menu_linky is-drop">
                                 <?php if ($icon): ?>
                                     <img loading="lazy" src="<?php echo $icon; ?>" alt="" class="menu_iconlinky">
                                 <?php endif; ?>
                                 <div class="menu_textly"><?php echo esc_html($title); ?></div>
-                                <div class="icon w-icon-dropdown-toggle"></div>
+                                <div class="icon"><img class="aroowte" src="<?php echo get_template_directory_uri(); ?>/images/dropIzq.png"> </div>
                             </div>
-                            <nav class="drop-control w-dropdown-list">
+                           <nav class="drop-control">
                                 <div class="drop_move">
                                     <div class="drop-capa">
                                         <div class="drop_bx-close">
@@ -118,7 +118,7 @@
                                                                     </div>
                                                                     <?php if (!empty($links)): ?>
                                                                         <?php foreach ($links as $link): ?>
-                                                                            <a href="<?php echo esc_url($link['url']); ?>" class="drop-list-item w-inline-block">
+                                                                            <a href="<?php echo esc_url($link['url']); ?>" class="drop-list-item">
                                                                                 <div><?php echo esc_html($link['label']); ?></div>
                                                                             </a>
                                                                         <?php endforeach; ?>
@@ -141,7 +141,7 @@
                                                                 <?php foreach ($social_links as $social): 
                                                                     $social_icon = wp_get_attachment_image_url($social['icon'], 'thumbnail');
                                                                 ?>
-                                                                    <a href="<?php echo esc_url($social['url']); ?>" class="drop-list-item is-red w-inline-block" target="_blank">
+                                                                    <a href="<?php echo esc_url($social['url']); ?>" class="drop-list-item is-red" target="_blank">
                                                                         <?php if ($social_icon): ?>
                                                                             <img loading="lazy" src="<?php echo $social_icon; ?>" alt="" class="drop_menu-icon">
                                                                         <?php endif; ?>
@@ -194,15 +194,15 @@
                     $character_image = wp_get_attachment_image_url($item['character_image'], 'full');
                 ?>
                             <!-- DROPDOWN WOOCOMMERCE -->
-                            <div data-delay="0" data-hover="false" class="menu_drop w-dropdown">
-                                <div class="menu_linky is-drop w-dropdown-toggle">
+                            <div class="menu_drop">
+                                <div class="menu_linky is-drop">
                                     <?php if ($icon): ?>
                                         <img loading="lazy" src="<?php echo $icon; ?>" alt="" class="menu_iconlinky">
                                     <?php endif; ?>
                                     <div class="menu_textly"><?php echo esc_html($title); ?></div>
-                                    <div class="icon w-icon-dropdown-toggle"></div>
+                                    <div class="icon"><img class="aroowte" src="<?php echo get_template_directory_uri(); ?>/images/dropIzq.png"> </div>
                                 </div>
-                                <nav class="drop-control w-dropdown-list">
+                                <nav class="drop-control">
                                     <div class="drop_move">
                                         <div class="drop-capa">
                                             <div class="drop_bx-close">
@@ -239,14 +239,14 @@
                                                                         
                                                                         <?php if (!empty($custom_links)): ?>
                                                                             <?php foreach ($custom_links as $link): ?>
-                                                                                <a href="<?php echo esc_url($link['link_url']); ?>" class="drop-list-item w-inline-block">
+                                                                                <a href="<?php echo esc_url($link['link_url']); ?>" class="drop-list-item ">
                                                                                     <div><?php echo esc_html($link['link_text']); ?></div>
                                                                                 </a>
                                                                             <?php endforeach; ?>
                                                                         <?php endif; ?>
                                                                         
                                                                         <?php if (!empty($button_text) && !empty($button_link)): ?>
-                                                                            <a href="<?php echo esc_url($button_link); ?>" class="button-icon is-outline w-inline-block">
+                                                                            <a href="<?php echo esc_url($button_link); ?>" class="button-icon is-outline">
                                                                                 <div><?php echo esc_html($button_text); ?></div>
                                                                                 <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/flecha-izquierda-1.svg" alt="">
                                                                             </a>
@@ -306,9 +306,11 @@
           </div>
         </nav>
       </div>
-      <div class="menu_btn w-nav-button">
-        <div class="w-icon-nav-menu"></div>
-      </div>
+        <div class="menu_btn">
+            <div class="menu_btn-icon">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/menu-icon.png" class="icon_mainWP">
+            </div>
+        </div>
     </div>
   </div>
 </div>
