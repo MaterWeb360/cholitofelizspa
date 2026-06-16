@@ -10,6 +10,7 @@
     left:0;
     top:100%;
     max-width: 1920px;
+     z-index:9999;
 }
 .aroowte{
     width: 15px;
@@ -83,10 +84,10 @@ body.menu-open{
 .form_input.is-invalid{
     border-color:#f44336;
 }
-.tarjetaproducto,
+/*.tarjetaproducto,
 .tarjeta{
     overflow: hidden;
-}
+}*/
 
 .tarjetaproductos_producto,
 .button.is-tarjeta{
@@ -754,6 +755,10 @@ ins{
 
 }
 @media screen and (max-width: 479px){
+    .footer_libro-icon.time{
+        max-width: 70%;
+        width: 8rem;
+    }
 
     .producto-single.text_ms {
         padding-top: 7rem !important;
@@ -767,4 +772,107 @@ ins{
     .producto-single_precio {
         margin-bottom: 0.75rem;
     }
+}
+
+
+/* Loading spinner */
+.loading-spinner {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    color: #f7941e;
+    grid-column: 1 / -1;
+}
+
+/* Paginación */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.pagina-btn {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.pagina-btn.activa,
+.pagina-btn:hover {
+    background: #f7941e;
+    color: white;
+    border-color: #f7941e;
+}
+
+/* Error message */
+.error {
+    text-align: center;
+    padding: 50px;
+    color: red;
+    grid-column: 1 / -1;
+}
+
+.no-productos {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    color: #999;
+    grid-column: 1 / -1;
+}
+
+/* Toggle icon rotation */
+.filtro-icono.rotado {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+}
+
+.filtro-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+
+.filtro-opciones {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Filtros - Estilos para toggles */
+.filtro-grupo {
+    border-bottom: 1px solid #eee;
+}
+
+.filtro-titulo {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 0 0;
+    margin: 0;
+}
+
+.filtro-icono {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.filtro-icono.rotado {
+    transform: rotate(180deg);
+}
+
+.filtro-opciones {
+    display: none; /* Comienza cerrado */
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* La categoría principal puede comenzar abierta */
+#filtro-categorias {
+    display: block; /* Categorías abiertas por defecto */
 }

@@ -153,7 +153,7 @@ $footer_background = carbon_get_theme_option('gl_footer_background');
              href="<?php echo !empty($footer_libro_button_url) ? esc_url($footer_libro_button_url) : home_url('/libro-de-reclamaciones'); ?>" 
              class="footer_libro w-inline-block">
 
-            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/libro.jpg" alt="" class="footer_libro-icon">
+            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/libro.jpg" alt="" class="footer_libro-icon time">
 
             <div class="footer_txt">
 
@@ -219,9 +219,34 @@ $footer_background = carbon_get_theme_option('gl_footer_background');
 
 </div>
 
+<!-- Primero: Definir los datos AJAX para filtros -->
+<script>
+var tienda_ajax = {
+    ajax_url: '<?php echo admin_url('admin-ajax.php'); ?>',
+    nonce: '<?php echo wp_create_nonce('tienda_filtros_nonce'); ?>'
+};
+console.log('✅ Datos AJAX definidos', tienda_ajax);
+</script>
+
+<!-- jQuery -->
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=69dc557ed352006dbe679e3b" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<!-- Scripts del tema -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/webmaster.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/webflow.js" type="text/javascript"></script>
+
+<!-- Script de filtros de tienda -->
+<script src="<?php echo get_template_directory_uri(); ?>/js/tienda-filtros.js"></script>
+
+<!-- Scripts para producto single -->
+<script>
+var wc_add_to_cart_params = {
+    ajax_url: '<?php echo admin_url('admin-ajax.php'); ?>',
+    checkout_url: '<?php echo wc_get_checkout_url(); ?>'
+};
+console.log('✅ Datos AJAX producto', wc_add_to_cart_params);
+</script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/producto-single.js"></script>
 
 <?php wp_footer(); ?>
 

@@ -118,7 +118,17 @@ $attributes = $product->get_attributes();
                     </div>
 
                     <div class="producto-single_descripcion">
-                        <?php echo $product->get_short_description(); ?>
+                        <?php 
+                        // Mostrar la descripción larga (contenido del producto)
+                        $product_description = $product->get_description();
+                        
+                        if (!empty($product_description)) {
+                            echo apply_filters('the_content', $product_description);
+                        } else {
+                            // Si no hay descripción larga, mostrar la corta como fallback
+                            echo '<p>' . $product->get_short_description() . '</p>';
+                        }
+                        ?>
                     </div>
 
                     <?php if (!empty($attributes)) : ?>
@@ -268,9 +278,9 @@ $attributes = $product->get_attributes();
 
                     </div>
 
-                    <a href="#" class="producto-single_btn-secundario">
-                        Comprar ahora
-                    </a>
+                    <button class="producto-single_btn" data-product-id="<?php echo get_the_ID(); ?>">
+                        Agregar al carrito
+                    </button>
 
                     <!-- BENEFICIOS -->
                     <div class="producto-single_beneficios">
