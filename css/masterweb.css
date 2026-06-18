@@ -876,3 +876,109 @@ ins{
 #filtro-categorias {
     display: block; /* Categorías abiertas por defecto */
 }
+
+/* ====== BOTONERA DE CANTIDAD ====== */
+.producto-single_cantidad {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid #d4cbc0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fcf9f4;
+}
+
+.producto-single_cantidad button {
+    background: #fcf9f4;
+    border: none;
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #4b2f1e;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.producto-single_cantidad button:hover {
+    background: #e8e0d6;
+}
+
+.producto-single_cantidad input.qty-input {
+    width: 55px;
+    height: 44px;
+    border: none;
+    border-left: 1px solid #d4cbc0;
+    border-right: 1px solid #d4cbc0;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4b2f1e;
+    background: #ffffff;
+    outline: none;
+}
+
+/* Quitar flechas del input número */
+.producto-single_cantidad input.qty-input::-webkit-inner-spin-button,
+.producto-single_cantidad input.qty-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.producto-single_cantidad input.qty-input {
+    -moz-appearance: textfield;
+}
+
+/* ====== CONTENEDOR DE COMPRA ====== */
+.producto-single_compra {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+/* ====== BOTÓN AGREGAR AL CARRITO ====== */
+.producto-single_btn-wrapper {
+    flex: 1;
+    min-width: 200px;
+}
+
+.producto-single_btn {
+    width: 100%;
+    background-color: #b5934b;
+    color: #ffffff;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.producto-single_btn:hover {
+    background-color: #9c7d3e;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(181, 147, 75, 0.3);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 600px) {
+    .producto-single_compra {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .producto-single_cantidad {
+        align-self: flex-start;
+    }
+
+    .producto-single_btn-wrapper {
+        min-width: unset;
+    }
+}

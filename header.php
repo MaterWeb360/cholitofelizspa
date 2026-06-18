@@ -30,8 +30,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">WebFont.load({  google: {    families: ["Great Vibes:400"]  }});</script>
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="<?php echo get_template_directory_uri(); ?>/images/webclip.png" rel="apple-touch-icon">
+    <?php 
+        $logo = wp_get_attachment_image_url(carbon_get_theme_option('gl_menu_logo'), 'full');
+        $default = get_template_directory_uri() . '/images/';
+        $icon = $logo ?: $default . 'favicon.ico';
+    ?>
+    <link rel="shortcut icon" href="<?php echo $icon; ?>" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?php echo $logo ?: $default . 'webclip.png'; ?>">
   <script src="https://cdn.prod.website-files.com/69dc557ed352006dbe679e3b%2F67c09b20b86d062b55a6cbd6%2F69fbe669cfdf84cf64739d58%2Ftepowerups20250401-1.0.0.js" type="text/javascript" data-te-powerups="null"></script>
 </head>
 <body>
@@ -297,10 +302,10 @@
             <?php endif; ?>
                 
                 <!-- CARRITO -->
-                <div class="menu_carrito">
+                <a href="/cart" class="menu_carrito">
                     <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/images/Frame-33.png" alt="" class="menu_iconcarrito">
                     <div class="menu_carrito-txt">Ver carrito mi compar</div>
-                </div>
+                </a>
                 
             </div>
           </div>

@@ -219,34 +219,46 @@ $footer_background = carbon_get_theme_option('gl_footer_background');
 
 </div>
 
-<!-- Primero: Definir los datos AJAX para filtros -->
+<!-- ======================================== -->
+<!-- TODOS LOS SCRIPTS AQUÍ - ORDEN CORRECTO -->
+<!-- ======================================== -->
+
+<!-- 1. PRIMERO: jQuery (siempre primero) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 2. SEGUNDO: Scripts de Webflow (dependen de jQuery) -->
+<script src="<?php echo get_template_directory_uri(); ?>/js/webmaster.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/webflow.js"></script>
+
+<!-- 3. TERCERO: Datos para filtros -->
 <script>
 var tienda_ajax = {
     ajax_url: '<?php echo admin_url('admin-ajax.php'); ?>',
     nonce: '<?php echo wp_create_nonce('tienda_filtros_nonce'); ?>'
 };
-console.log('✅ Datos AJAX definidos', tienda_ajax);
+console.log('✅ Datos AJAX definidos');
 </script>
 
-<!-- jQuery -->
-<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=69dc557ed352006dbe679e3b" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
-<!-- Scripts del tema -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/webmaster.js" type="text/javascript"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/webflow.js" type="text/javascript"></script>
-
-<!-- Script de filtros de tienda -->
+<!-- 4. CUARTO: Script de filtros (depende de jQuery y los datos) -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/tienda-filtros.js"></script>
 
-<!-- Scripts para producto single -->
+<?php if (is_product()) : ?>
+<!-- 5. QUINTO: Datos de WooCommerce -->
 <script>
 var wc_add_to_cart_params = {
     ajax_url: '<?php echo admin_url('admin-ajax.php'); ?>',
-    checkout_url: '<?php echo wc_get_checkout_url(); ?>'
+    wc_ajax_url: '<?php echo WC_AJAX::get_endpoint("%%endpoint%%"); ?>',
+    i18n_view_cart: '<?php esc_attr_e("View cart", "woocommerce"); ?>',
+    cart_url: '<?php echo wc_get_cart_url(); ?>',
+    is_cart: '<?php echo is_cart() ? "1" : "0"; ?>',
+    cart_redirect_after_add: '<?php echo get_option("woocommerce_cart_redirect_after_add"); ?>'
 };
-console.log('✅ Datos AJAX producto', wc_add_to_cart_params);
+console.log('✅ wc_add_to_cart_params definido');
 </script>
+
+<!-- 6. SEXTO: Script de producto single -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/producto-single.js"></script>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 

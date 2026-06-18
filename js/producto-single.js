@@ -1,166 +1,167 @@
-// producto-single.js
-jQuery(document).ready(function($) {
-    
-    console.log('✅ producto-single.js cargado');
-    
+(function($) {
+    'use strict';
+
+    console.log('✅ producto-single.js INICIADO');
+
     // ============================================
-    // 1. CONTROL DE CANTIDAD (+ y -)
+    // 1. CONTROL DE CANTIDAD
     // ============================================
-    
-    var $quantityInput = $('.producto-single_cantidad input');
-    var $btnMinus = $('.producto-single_cantidad button:first');
-    var $btnPlus = $('.producto-single_cantidad button:last');
-    
-    console.log('Cantidad input encontrado:', $quantityInput.length);
-    console.log('Botón - encontrado:', $btnMinus.length);
-    console.log('Botón + encontrado:', $btnPlus.length);
-    
-    // Botón restar
+
+    var $quantityInput = $('.producto-single_cantidad input.qty-input');
+    var $btnMinus = $('.producto-single_cantidad .btn-minus');
+    var $btnPlus = $('.producto-single_cantidad .btn-plus');
+
+    // Botón menos
     $btnMinus.on('click', function(e) {
         e.preventDefault();
-        var currentVal = parseInt($quantityInput.val()) || 1;
-        if (currentVal > 1) {
-            $quantityInput.val(currentVal - 1);
-            console.log('Cantidad:', currentVal - 1);
-        }
+        var val = parseInt($quantityInput.val()) || 1;
+        if (val > 1) $quantityInput.val(val - 1);
     });
-    
-    // Botón sumar
+
+    // Botón más
     $btnPlus.on('click', function(e) {
         e.preventDefault();
-        var currentVal = parseInt($quantityInput.val()) || 1;
-        $quantityInput.val(currentVal + 1);
-        console.log('Cantidad:', currentVal + 1);
+        var val = parseInt($quantityInput.val()) || 1;
+        $quantityInput.val(val + 1);
     });
-    
-    // Validar input manual
-    $quantityInput.on('change', function() {
-        var val = parseInt($(this).val()) || 1;
-        if (val < 1) val = 1;
-        $(this).val(val);
-    });
-    
+
     // ============================================
-    // 2. GALERÍA DE IMÁGENES
+    // 2. AGREGAR AL CARRITO
     // ============================================
-    
-    var $mainImage = $('.producto-single_imagen .img_stili');
-    var $thumbs = $('.producto-single_thumb');
-    
-    console.log('Imagen principal encontrada:', $mainImage.length);
-    console.log('Miniaturas encontradas:', $thumbs.length);
-    
-    // Al hacer clic en una miniatura
-    $thumbs.on('click', function() {
-        var $thumb = $(this);
-        var $thumbImg = $thumb.find('img');
-        var newImageUrl = $thumbImg.attr('src');
-        
-        console.log('Miniatura clickeada, nueva imagen:', newImageUrl);
-        
-        // Cambiar la imagen principal
-        $mainImage.fadeOut(150, function() {
-            $mainImage.attr('src', newImageUrl);
-            $mainImage.fadeIn(150);
-        });
-        
-        // Actualizar el zoom lens
-        $('.zoom-lens').css('background-image', 'url(' + newImageUrl + ')');
-        
-        // Marcar miniatura como activa
-        $thumbs.removeClass('is-active');
-        $thumb.addClass('is-active');
-    });
-    
-    // Activar primera miniatura por defecto
-    if ($thumbs.length > 0 && !$('.producto-single_thumb.is-active').length) {
-        $thumbs.first().addClass('is-active');
-    }
-    
-    // ============================================
-    // 3. ZOOM EN IMAGEN PRINCIPAL
-    // ============================================
-    
-    var $lens = $('.zoom-lens');
-    var $container = $('.producto-single_imagen');
-    
-    $container.on('mouseenter', function() {
-        $lens.css('opacity', '1');
-    }).on('mouseleave', function() {
-        $lens.css('opacity', '0');
-    }).on('mousemove', function(e) {
-        var containerOffset = $(this).offset();
-        var containerWidth = $(this).width();
-        var containerHeight = $(this).height();
-        
-        var mouseX = e.pageX - containerOffset.left;
-        var mouseY = e.pageY - containerOffset.top;
-        
-        var lensWidth = $lens.width();
-        var lensHeight = $lens.height();
-        
-        var posX = mouseX - (lensWidth / 2);
-        var posY = mouseY - (lensHeight / 2);
-        
-        // Limitar posición
-        if (posX < 0) posX = 0;
-        if (posY < 0) posY = 0;
-        if (posX > containerWidth - lensWidth) posX = containerWidth - lensWidth;
-        if (posY > containerHeight - lensHeight) posY = containerHeight - lensHeight;
-        
-        $lens.css({
-            left: posX + 'px',
-            top: posY + 'px'
-        });
-        
-        // Calcular posición de fondo para zoom
-        var percentX = (posX / (containerWidth - lensWidth)) * 100;
-        var percentY = (posY / (containerHeight - lensHeight)) * 100;
-        
-        $lens.css('background-position', percentX + '% ' + percentY + '%');
-    });
-    
-    // ============================================
-    // 4. VARIACIONES
-    // ============================================
-    
-    var selectedVariations = {};
-    
-    $('.producto-single_var').on('click', function() {
-        var $btn = $(this);
-        var attribute = $btn.data('attribute');
-        var value = $btn.data('value');
-        
-        $btn.closest('.producto-single_variaciones').find('.producto-single_var').removeClass('is-active');
-        $btn.addClass('is-active');
-        
-        selectedVariations[attribute] = value;
-        console.log('Variación seleccionada:', selectedVariations);
-    });
-    
-    // ============================================
-    // 5. AGREGAR AL CARRITO
-    // ============================================
-    
+
     $('.producto-single_btn').on('click', function(e) {
         e.preventDefault();
-        
-        var productId = $('input[name="product_id"]').val() || $('.producto-single_btn').data('product-id');
-        
+        console.log('🛒 Click en agregar al carrito');
+
+        var $btn = $(this);
+        var productId = $btn.data('product-id');
+        var quantity = parseInt($quantityInput.val()) || 1;
+
         if (!productId) {
-            console.error('No se encontró ID del producto');
-            alert('Error: No se pudo identificar el producto');
+            alert('Error: Producto no identificado');
             return;
         }
-        
-        var quantity = $quantityInput.val();
-        
-        console.log('Agregar al carrito - Producto:', productId, 'Cantidad:', quantity);
-        alert('Producto agregado al carrito. ID: ' + productId + ' Cantidad: ' + quantity);
-        
-        // Aquí iría la llamada AJAX real
-        // Por ahora es una demo
+
+        if (typeof wc_add_to_cart_params === 'undefined') {
+            alert('Error: Configuración del carrito no disponible');
+            return;
+        }
+
+        var data = {
+            product_id: productId,
+            quantity: quantity
+        };
+
+        var ajaxUrl = wc_add_to_cart_params.wc_ajax_url.replace('%%endpoint%%', 'add_to_cart');
+        if (ajaxUrl.startsWith('/')) {
+            ajaxUrl = window.location.origin + ajaxUrl;
+        }
+
+        var originalText = $btn.text();
+        $btn.text('Agregando...').prop('disabled', true);
+
+        $.ajax({
+            type: 'POST',
+            url: ajaxUrl,
+            data: data,
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            },
+            success: function(response) {
+                console.log('✅ Respuesta:', response);
+                $btn.text(originalText).prop('disabled', false);
+
+                if (response && response.error) {
+                    alert('❌ ' + (response.error || 'Error al agregar'));
+                    return;
+                }
+
+                alert('✅ Producto agregado al carrito');
+
+                if (response.fragments) {
+                    $.each(response.fragments, function(key, value) {
+                        $(key).replaceWith(value);
+                    });
+                }
+
+                $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $btn]);
+            },
+            error: function(xhr, status, error) {
+                console.error('❌ Error:', error);
+                $btn.text(originalText).prop('disabled', false);
+                alert('❌ Error al agregar. Revisa la consola.');
+            }
+        });
     });
-    
-    console.log('✅ producto-single.js inicializado correctamente');
-});
+
+    // ============================================
+    // 3. GALERÍA DE IMÁGENES
+    // ============================================
+
+    var $mainImage = $('.producto-single_imagen .img_stili');
+    var $thumbs = $('.producto-single_thumb');
+
+    if ($thumbs.length) {
+        $thumbs.on('click', function() {
+            var $thumb = $(this);
+            var newImage = $thumb.find('img').attr('src');
+
+            if (newImage) {
+                $mainImage.fadeOut(150, function() {
+                    $mainImage.attr('src', newImage);
+                    $mainImage.fadeIn(150);
+                });
+                $thumbs.removeClass('is-active');
+                $thumb.addClass('is-active');
+            }
+        });
+
+        if (!$('.producto-single_thumb.is-active').length) {
+            $thumbs.first().addClass('is-active');
+        }
+    }
+
+    // ============================================
+    // 4. ZOOM
+    // ============================================
+
+    var $lens = $('.zoom-lens');
+    var $container = $('.producto-single_imagen');
+
+    if ($lens.length && $container.length) {
+        $container.on('mouseenter', function() {
+            $lens.css('opacity', '1');
+        }).on('mouseleave', function() {
+            $lens.css('opacity', '0');
+        }).on('mousemove', function(e) {
+            var offset = $(this).offset();
+            var width = $(this).width();
+            var height = $(this).height();
+
+            var x = e.pageX - offset.left - ($lens.width() / 2);
+            var y = e.pageY - offset.top - ($lens.height() / 2);
+
+            x = Math.max(0, Math.min(x, width - $lens.width()));
+            y = Math.max(0, Math.min(y, height - $lens.height()));
+
+            $lens.css({
+                left: x + 'px',
+                top: y + 'px',
+                backgroundPosition: (x / (width - $lens.width()) * 100) + '% ' + (y / (height - $lens.height()) * 100) + '%'
+            });
+        });
+    }
+
+    // ============================================
+    // 5. VARIACIONES
+    // ============================================
+
+    $('.producto-single_var').on('click', function() {
+        var $btn = $(this);
+        $btn.closest('.producto-single_variaciones').find('.producto-single_var').removeClass('is-active');
+        $btn.addClass('is-active');
+    });
+
+    console.log('✅ producto-single.js LISTO');
+
+})(jQuery);

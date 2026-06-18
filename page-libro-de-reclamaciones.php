@@ -1,3 +1,59 @@
+<?php
+// Procesar el formulario del Libro de Reclamaciones
+if ( isset($_POST['nombre']) ) {
+    
+    // Validar y sanitizar datos
+    $nombre = sanitize_text_field($_POST['nombre']);
+    $email = sanitize_email($_POST['correo']);
+    $telefono = sanitize_text_field($_POST['telefono']);
+    $documento = sanitize_text_field($_POST['documento']);
+    $direccion = sanitize_textarea_field($_POST['direccion']);
+    $producto = sanitize_text_field($_POST['producto_servicio']);
+    $monto = sanitize_text_field($_POST['monto_reclamado']);
+    $detalle = sanitize_textarea_field($_POST['detalle']);
+    $pedido = sanitize_textarea_field($_POST['pedido']);
+    
+    // Asunto y cuerpo del correo para ti
+    $to = 'cholitofeliztiendaonline@gmail.com';
+    $subject = 'Nuevo Reclamo - Libro de Reclamaciones';
+    
+    $body = "Se ha recibido un nuevo reclamo:\n\n";
+    $body .= "Nombre: $nombre\n";
+    $body .= "Email: $email\n";
+    $body .= "Teléfono: $telefono\n";
+    $body .= "Documento: $documento\n";
+    $body .= "Dirección: $direccion\n";
+    $body .= "Producto/Servicio: $producto\n";
+    $body .= "Monto reclamado: S/. $monto\n";
+    $body .= "Detalle del reclamo: $detalle\n";
+    $body .= "Pedido del consumidor: $pedido\n";
+    
+    $headers = array('Content-Type: text/plain; charset=UTF-8');
+    
+    // Enviar correo al administrador
+    $mail_sent = wp_mail($to, $subject, $body, $headers);
+    
+    // Si se envió, enviar confirmación al cliente
+    if ( $mail_sent ) {
+        $client_subject = 'Confirmación de Reclamo - Cholito Feliz Espa';
+        $client_body = "Hola $nombre,\n\n";
+        $client_body .= "Hemos recibido tu reclamo. Te responderemos a la brevedad.\n\n";
+        $client_body .= "¡Gracias por contactarnos!\n";
+        $client_body .= "Cholito Feliz Espa";
+        
+        wp_mail($email, $client_subject, $client_body, $headers);
+        
+        // ✅ REDIRECCIONAR A GRACIAS
+        wp_redirect('https://marketdogcholitofeliz.com/gracias-libro');
+        exit;
+    } else {
+        // Si falla, mostrar mensaje de error
+        echo '<div class="error-message">❌ Hubo un error al enviar el reclamo. Por favor, intenta nuevamente.</div>';
+    }
+}
+?>
+
+
 <?php get_header(); ?>
 
 <?php
